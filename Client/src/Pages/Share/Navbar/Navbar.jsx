@@ -21,7 +21,7 @@ const Navbar = () => {
 
     return (
         <div>
-            <div className="md:w-11/12 w-full h-[140px] md:px-10 px-4 my-auto pt-4 mx-auto font-markazi text-white">
+            <div className="md:w-10/12 w-full h-[140px] md:px-10 px-4 my-auto pt-4 mx-auto font-markazi text-white">
                 {/* first nav */}
                 <div className="flex justify-between items-center">
                     <div className="md:block hidden text-md">
