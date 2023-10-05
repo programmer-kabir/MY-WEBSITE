@@ -5,10 +5,14 @@ import Footer from '../Pages/Share/Footer/Footer';
 
 const MainLayout = () => {
     return (
-        <div>
-            <Navbar />
-            <Outlet />
-            <Footer />
+        <div className='relative'>
+            <div className='absolute top-0 w-full z-40'>
+                <Navbar />
+            </div>
+            <div>
+                <Outlet />
+            </div>
+            {/* <Footer /> */}
         </div>
     );
 };
