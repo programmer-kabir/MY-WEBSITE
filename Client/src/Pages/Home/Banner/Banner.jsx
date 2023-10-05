@@ -4,19 +4,19 @@ import img from "../../../assets/Banner/man-image.png";
 import banner from "../../../assets/Banner/background.png";
 const Banner = () => {
   return (
-    <div className="relative">
-          {/* background image  */}
+    <div className="w-full relative">
+      {/* background image  */}
       <div>
         <img className=" h-[800px] md:h-full" src={banner} alt="" />
       </div>
       <div className="w-10/12 mx-auto">
         <div className="md:flex gap-4 flex-row-reverse absolute top-0 items-center h-[800px]">
-         {/* content section  */}
-         
+          {/* content section  */}
+
           <div className="md:w-1/2 w-3/4 2xl:pt-28 pt-28 md:pt-4 flex justify-center">
             <img className="2xl:w-[600px]  w-[500px]  " src={img} alt="" />
           </div>
-       
+
           <div className="md:w-1/2 w-full md:space-y-8 space-y-4">
             <h2 className="md:text-7xl 2xl:text-8xl  text-4xl font-semibold font-markazi text-gray-50 md:leading-[86px]">
               A Design & Branding <br />  Agency in <span className="text-[#EB5144] md:text-8xl text-5xl  2xl:text-8xl italic">New York</span>
