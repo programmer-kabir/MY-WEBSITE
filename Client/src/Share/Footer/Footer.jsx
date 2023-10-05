@@ -67,13 +67,13 @@ const Footer = () => {
               <div className="w-full">
                 <span className="flex shadow-md mb-5 text-2xl">
                   <input
-                    className="field text-base outline-none px-2 text-gray-700  rounded-l w-full"
+                    className="field text-base outline-none px-2 text-gray-700  rounded-l-sm w-full"
                     type="text"
                     placeholder="user@gmail.com"
                     value={email}
                     onChange={e => setEmail(e.target.value)}
                   />
-                  <button onClick={handleEmail}  disabled={!email}  className="bg-indigo-500 w-28  text-center text-gray-200 py-1 px-5 rounded-r">
+                  <button onClick={handleEmail}  disabled={!email}  className="bg-indigo-500 w-28  text-center text-gray-200 py-1 px-5 rounded-r-sm">
                     Email
                   </button>
                 </span>
