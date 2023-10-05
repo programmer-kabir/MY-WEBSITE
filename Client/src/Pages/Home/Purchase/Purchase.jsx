@@ -10,7 +10,7 @@ const Purchase = () => {
           "Massive number of components, templates, open-source version, free perks"
         }
       />
-      <div className="md:flex flex-row-reverse gap-10 md:h-[600px] md:items-center  ">
+      <div className="md:flex flex-row-reverse gap-10 pt-5 md:items-center  ">
         <div className="md:w-1/2 w-full pb-7 md:pb-0">
           <div class="overflow-hidden  rounded-md">
             <img
