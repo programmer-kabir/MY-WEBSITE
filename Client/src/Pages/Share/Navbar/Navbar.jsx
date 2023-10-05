@@ -23,7 +23,7 @@ const Navbar = () => {
         <div>
             <div className="md:w-10/12 w-full h-[140px] md:px-10 px-4 my-auto pt-4 mx-auto font-markazi text-white">
                 {/* first nav */}
-                <div className="flex justify-between items-center">
+                <div className="md:flex justify-between items-center  hidden ">
                     <div className="md:block hidden text-md">
                         <ul className="flex gap-4 text-xl font-semibold">
                             <li><a href="#">About</a></li>
@@ -49,12 +49,12 @@ const Navbar = () => {
                 </div>
                 {/* second nav */}
 
-                <div class="border-t border-solid border-1  border-[#F8C55E] my-3"></div>
+                <div class="border-t border-solid border-1  border-[#F8C55E] my-3 hidden md:block"></div>
 
 
                 <div className="flex justify-between items-center my-4">
                     <div>
-                        <img className="w-[100px] h-[100px]  rounded-full " src="https://i.ibb.co/G5wFbNv/download.png" alt="" />
+                        <h2 className="text-4xl ">Get Fire</h2>
                     </div>
                     <div className="md:block hidden">
                         <ul className="flex gap-5 text-2xl">

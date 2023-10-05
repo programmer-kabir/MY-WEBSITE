@@ -2,12 +2,17 @@ import React from 'react';
 import { FcTemplate } from 'react-icons/fc';
 import { FaBootstrap, FaReact } from 'react-icons/fa';
 import { TbComponents } from 'react-icons/tb';
+import TitleSection from '../../Share/TitleSection/TitleSection';
 
 
 const FetureTopSection = () => {
     return (
 
-        <div className=' w-11/12 mx-auto grid md:grid-cols-4 grid-cols-1 md:gap-10 gap-4 justify-between my-5'>
+        <section className='w-10/12 mx-auto'>
+
+            <TitleSection  MainTitle={'Our Feature'} SubTitle={'There are top feature include and clean code optimize,There are top feature include and clean code optimize '}></TitleSection>
+
+            <div className='  grid md:grid-cols-4 grid-cols-1 md:gap-10 gap-4 justify-between my-5'>
             <div className='border text-center space-y-3 p-2 shadow-md'>
                 <span className='flex justify-center'><FcTemplate className='text-6xl'></FcTemplate></span>
                 <h2 className='text-4xl font-semibold font-markazi'>HTML template</h2>
@@ -34,6 +39,7 @@ const FetureTopSection = () => {
             </div>
 
         </div>
+        </section>
     );
 };
 
