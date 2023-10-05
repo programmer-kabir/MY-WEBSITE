@@ -32,7 +32,7 @@ const Review = () => {
   return (
     <section className="w-10/12 mx-auto">
       <TitleSection
-        MainTitle={"Client Says Templates and Components"}
+        MainTitle={"Client Review"}
         SubTitle={
           "Bridging Design Nuances, Elevating User Interactions, Crafting Tomorrow's Web."
         }
