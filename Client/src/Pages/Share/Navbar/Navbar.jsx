@@ -49,7 +49,7 @@ const Navbar = () => {
                 </div>
                 {/* second nav */}
 
-                <div class="border-t border-solid border-1  border-[#F8C55E] my-4"></div>
+                <div class="border-t border-solid border-1  border-[#F8C55E] my-3"></div>
 
 
                 <div className="flex justify-between items-center my-4">
