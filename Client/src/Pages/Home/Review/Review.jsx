@@ -66,7 +66,7 @@ const Review = () => {
                         className=" rounded-full bg-gray-500"
                       />
                     </div>
-                    <div className="text-start ">
+                    <div className="text-start">
                       <h4 className="font-bold">{review?.name}</h4>
                       <span className="text-xs text-gray-400">2 days ago</span>
                     </div>
