@@ -12,7 +12,7 @@ const FetureTopSection = () => {
 
             <TitleSection  MainTitle={'Our Feature'} SubTitle={'There are top feature include and clean code optimize,There are top feature include and clean code optimize '}></TitleSection>
 
-            <div className='  grid md:grid-cols-4 grid-cols-1 md:gap-10 gap-4 justify-between my-5'>
+            <div className='  grid md:grid-cols-4 grid-cols-1 md:gap-10 gap-4 justify-between my-20'>
             <div className='border text-center space-y-3 p-2 shadow-md'>
                 <span className='flex justify-center'><FcTemplate className='text-6xl'></FcTemplate></span>
                 <h2 className='text-4xl font-semibold font-markazi'>HTML template</h2>

@@ -37,3 +37,10 @@ button.MuiButtonBase-root.MuiTab-root.MuiTab-textColorPrimary.Mui-selected.css-1
     font-weight: bold;
     color: black;
 }
+
+.boxNews{
+    border-radius: 20px;
+background: #d8cbcb;
+box-shadow:  30px 30px 60px #b8adad,
+             -30px -30px 60px #f8e9e9;
+}
