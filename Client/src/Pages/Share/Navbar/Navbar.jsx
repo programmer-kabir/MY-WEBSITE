@@ -1,27 +1,27 @@
 import { useState } from "react";
-import { FaFacebook,FaGithub,FaTwitter,FaDiscord } from 'react-icons/fa';
- 
+import { FaFacebook, FaGithub, FaTwitter, FaDiscord } from 'react-icons/fa';
+
 const Navbar = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [isTogglerOpen, setIsTogglerOpen] = useState(false);
     const [isResponsiveMenuOpen, setIsResponsiveMenuOpen] = useState(false);
-  
+
     const toggleDropdown = () => {
-      setIsDropdownOpen(!isDropdownOpen);
+        setIsDropdownOpen(!isDropdownOpen);
     };
-  
+
     const toggleToggler = () => {
-      setIsTogglerOpen(!isTogglerOpen);
+        setIsTogglerOpen(!isTogglerOpen);
     };
-  
+
     const toggleResponsiveMenu = () => {
-      setIsResponsiveMenuOpen(!isResponsiveMenuOpen);
+        setIsResponsiveMenuOpen(!isResponsiveMenuOpen);
     };
-  
+
 
     return (
         <div>
-            <div className="md:w-11/12 w-full h-[140px] md:px-10 px-4 my-auto pt-4 mx-auto font-markazi">
+            <div className="md:w-11/12 w-full h-[140px] md:px-10 px-4 my-auto pt-4 mx-auto font-markazi text-white">
                 {/* first nav */}
                 <div className="flex justify-between items-center">
                     <div className="md:block hidden text-md">
@@ -33,10 +33,10 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <div className="flex md:gap-5 gap-2 text-xl">
-                       <FaFacebook></FaFacebook>
-                       <FaGithub></FaGithub>
-                       <FaTwitter></FaTwitter>
-                       <FaDiscord></FaDiscord>
+                        <FaFacebook></FaFacebook>
+                        <FaGithub></FaGithub>
+                        <FaTwitter></FaTwitter>
+                        <FaDiscord></FaDiscord>
                     </div>
                     <div className="md:hidden block text-xl">
                         <button
@@ -48,10 +48,13 @@ const Navbar = () => {
                     </div>
                 </div>
                 {/* second nav */}
-                <hr className="mt-4" />
-                <div className="flex justify-between items-center">
+
+                <div class="border-t border-solid border-1  border-[#F8C55E] my-4"></div>
+
+
+                <div className="flex justify-between items-center my-4">
                     <div>
-                        <img className="w-[100px] " src="https://i.ibb.co/G5wFbNv/download.png" alt="" />
+                        <img className="w-[100px] h-[100px]  rounded-full " src="https://i.ibb.co/G5wFbNv/download.png" alt="" />
                     </div>
                     <div className="md:block hidden">
                         <ul className="flex gap-5 text-2xl">
@@ -62,8 +65,9 @@ const Navbar = () => {
                                 <div className="flex items-center gap-2">
                                     <a href="#"> Template </a>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24">
-                                        <path d="M12 21l-12-18h24z" />
+                                        <path d="M12 21l-12-18h24" fill="white" />
                                     </svg>
+
                                 </div>
                                 <span>
                                     <ul id="dropDown" className={`absolute px-4 bg-[#D8980E] text-white py-2 mx-auto mt-4 -ml-4 space-y-4 ${isTogglerOpen ? 'block' : 'hidden'}`}>
@@ -81,7 +85,7 @@ const Navbar = () => {
                                 <div className="flex items-center gap-2">
                                     <a href="#"> Services </a>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24">
-                                        <path d="M12 21l-12-18h24z" />
+                                        <path d="M12 21l-12-18h24z" fill="white" />
                                     </svg>
                                 </div>
                                 <span>
@@ -95,12 +99,12 @@ const Navbar = () => {
                             </li>
                             {/* dropdown end */}
                             <li><a href="#">Blogs</a></li>
-                         
+
                         </ul>
                     </div>
                     <div className=" md:block hidden">
                         <button
-                            className="border border-[#D8980E]  text-xl hover:text-white mr-5  text-black rounded-md    hover:bg-[#D8980E] px-6 py-2"
+                            className="border border-[#D8980E] text-white  text-xl hover:text-white mr-5  rounded-md    hover:bg-[#D8980E] px-6 py-2"
                             style={{ transition: 'background 0.4s ease-in-out' }}
                         >
                             Get Discount
