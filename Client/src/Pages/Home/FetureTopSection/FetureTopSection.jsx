@@ -2,7 +2,7 @@ import React from 'react';
 import { FcTemplate } from 'react-icons/fc';
 import { FaBootstrap, FaReact } from 'react-icons/fa';
 import { TbComponents } from 'react-icons/tb';
-import TitleSection from '../../Share/TitleSection/TitleSection';
+import TitleSection from '../../../Share/TitleSection/TitleSection';
 
 
 const FetureTopSection = () => {

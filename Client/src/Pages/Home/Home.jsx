@@ -1,15 +1,20 @@
 import React from 'react';
 import Banner from './Banner/Banner';
 import FetureTopSection from './FetureTopSection/FetureTopSection';
+import CodePreviewSection from './CodePreviewSection/CodePreviewSection';
+import Purchase from './Purchase/Purchase';
+import Review from "./Review/Review";
 
 const Home = () => {
-    return (
-        <div>
-            <Banner />
-            <FetureTopSection />
-           
-        </div>
-    );
+  return (
+    <div>
+      <Banner />
+      <FetureTopSection />
+      <CodePreviewSection></CodePreviewSection>
+      <Purchase />
+      <Review></Review>
+    </div>
+  );
 };
 
 export default Home;
