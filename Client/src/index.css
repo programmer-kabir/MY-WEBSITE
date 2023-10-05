@@ -2,18 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* template tabs section custom css  */
-ul.react-tabs__tab-list {
-    display: flex;
-    gap: 50px;
-    font-weight: bold;
-    margin-bottom: 30px;
-  }
-  
-  ul.react-tabs__tab-list li {
-    border: 1px solid rgb(207, 207, 207);
-    padding: 5px 40px;
-  }
+
 
 .boxNews {
   border-radius: 20px;
@@ -21,3 +10,4 @@ ul.react-tabs__tab-list {
   color: white;
   box-shadow: 5px 5px 10px #d0d0d0, -5px -5px 10px #f0f0f0;
 }
+

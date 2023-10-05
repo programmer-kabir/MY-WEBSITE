@@ -7,7 +7,7 @@ import cards2 from "../../assets/Tabs/TabsCardsImage/first3Card.png"
 
 const TabsCard = () => {
     return (
-        <div className='w-10/12 mx-auto'>
+        <div className=''>
             <div><img className='w-full' src={cards1} alt="" /></div>
             <div><img className='w-full' src={cards2} alt="" /></div>
         </div>
