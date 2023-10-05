@@ -21,6 +21,7 @@ ul.react-tabs__tab-list li {
 
 
 }
+
 /* mui tabs section custom css  */
 .MuiTabs-flexContainer.css-heg063-MuiTabs-flexContainer {
     display: flex;
@@ -29,15 +30,21 @@ ul.react-tabs__tab-list li {
 }
 
 .css-1gsv261 {
-    border-bottom: none;
+    border: none;
     border-color: rgba(0, 0, 0, 0.12);
+    margin-bottom: 20px;
 }
+
 button.MuiButtonBase-root.MuiTab-root.MuiTab-textColorPrimary.Mui-selected.css-1h9z7r5-MuiButtonBase-root-MuiTab-root {
     background-color: #F7C55F;
     font-weight: bold;
     color: black;
 }
 
-.css-1gsv261 {
-    border: none;
+.boxNews {
+    border-radius: 20px;
+    background: #022082;
+    color: white;
+    box-shadow:  5px 5px 10px #d0d0d0,
+                 -5px -5px 10px #f0f0f0;
 }

@@ -73,7 +73,7 @@ const Footer = () => {
                     value={email}
                     onChange={e => setEmail(e.target.value)}
                   />
-                  <button onClick={handleEmail}  disabled={!email}  className="bg-indigo-500 w-28  text-center text-gray-200 py-1 px-5 rounded-r-sm">
+                  <button onClick={handleEmail}  disabled={!email}  className="bg-indigo-500 w-28 font-markazi text-center text-gray-200 py-1 px-5 rounded-r-sm">
                     Email
                   </button>
                 </span>

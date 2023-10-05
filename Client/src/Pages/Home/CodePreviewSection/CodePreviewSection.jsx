@@ -12,7 +12,7 @@ const CodePreviewSection = () => {
     };
 
     return (
-        <section className='w-10/12 mx-auto'>
+        <section className='md:w-10/12  mx-auto'>
             <TitleSection
                 MainTitle={'Available in HTML, CSS, Tailwind Components'}
                 SubTitle={
