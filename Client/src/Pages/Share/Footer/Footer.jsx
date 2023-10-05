@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 
 const Footer = () => {
-    return (
-        <div>
-            <h1 className='text-6xl text-center text-red-700'>Not you good only yor bow is good for me f*** K</h1>
-        </div>
-    );
+  return (
+    <div>
+      <p></p>{" "}
+    </div>
+  );
 };
 
 export default Footer;
