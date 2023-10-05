@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import TitleSection from '../../Share/TitleSection/TitleSection';
+ 
 import { Box, Tab, Tabs } from '@mui/material';
 import TabsCard from '../../../Components/TabsCard/TabsCard';
+import TitleSection from '../../../Share/TitleSection/TitleSection';
 
 const CodePreviewSection = () => {
     const [value, setValue] = useState(0);
