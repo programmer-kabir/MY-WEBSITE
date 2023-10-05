@@ -1,7 +1,7 @@
 import React from "react";
 import { FaPlay } from "react-icons/fa";
 import img from "../../../assets/Banner/man-image.png";
-import banner from "../../../assets/Banner/backgorund.png";
+import banner from "../../../assets/Banner/background.png";
 const Banner = () => {
   return (
     <div className="relative">
