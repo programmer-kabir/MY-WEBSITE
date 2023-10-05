@@ -47,7 +47,7 @@ const CodeRevel = () => {
           </div>
         </div>
         {/* body */}
-        <div className="mt-5 px-5 max-h-[500px] overflow-y-auto">
+        <div className="mt-5  max-h-[500px] overflow-y-auto">
           <div className="bg-[#727272] rounded">
             {activeTab === "CODE" && (
               <pre className="bg-gray-800  rounded text-white overflow-x-auto">

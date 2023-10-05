@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import toast from 'react-hot-toast'
 const Newsletter = () => {
     const [email, setEmail] = useState('');
     const handleEmail = () => {

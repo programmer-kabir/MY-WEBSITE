@@ -82,7 +82,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="py-6 font-markazi text-2xl text-center text-gray-400">
-          © 1968 Company Co. All rights reserved.
+          © 2023 Company Co. All rights reserved.
         </div>
       </footer>
     </section>
