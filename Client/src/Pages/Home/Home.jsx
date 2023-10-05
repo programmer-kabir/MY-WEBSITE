@@ -13,10 +13,13 @@ const Home = () => {
     <div>
       <Banner />
       <FetureTopSection />
+      <CodeRevel></CodeRevel>
       <CodePreviewSection></CodePreviewSection>
       <Purchase />
-      <Review></Review>
+      <AboutSection></AboutSection>
       <Newsletter></Newsletter>
+      <Review></Review>
+
     </div>
   );
 };

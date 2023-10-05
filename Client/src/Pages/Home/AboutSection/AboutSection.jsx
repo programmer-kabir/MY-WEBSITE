@@ -11,7 +11,7 @@ const AboutSection = () => {
             "We believe to our product to help any developer to work easy for life"
           }
         />
-        <div className="md:flex flex-row-reverse gap-10 pt-5 md:items-center  ">
+        <div className="md:flex gap-20 pt-5 md:items-center  ">
           <div className="md:w-1/2 w-full pb-7 md:pb-0">
             <div class="overflow-hidden  rounded-md">
               <img
@@ -21,9 +21,9 @@ const AboutSection = () => {
               />
             </div>
           </div>
-          <div className="md:w-1/2  w-full space-y-4">
-            <h2 className="text-6xl font-markazi ">
-              We are Help to Developer <br />  Access To All Products
+          <div className="md:w-1/2  w-full space-y-6">
+            <h2 className="md:text-6xl text-5xl font-markazi  ">
+              We are Help to Developer <br className=" md:block hidden" />  Access To All Products
             </h2>
             <p className="md:w-10/12 text-base text-gray-800 font-medium">
             Get Unlimited Access To All Templates and UI Kits . All Component

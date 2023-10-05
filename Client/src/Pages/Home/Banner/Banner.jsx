@@ -19,7 +19,7 @@ const Banner = () => {
 
           <div className="md:w-1/2 w-full md:space-y-8 space-y-4">
             <h2 className="md:text-7xl 2xl:text-8xl  text-4xl font-semibold font-markazi text-gray-50 md:leading-[86px]">
-              A Design & Branding <br />  Agency in <span className="text-[#EB5144] md:text-8xl text-5xl  2xl:text-8xl italic">New York</span>
+              A Design & Branding <br />  Agency in <span className="text-[#EB5144] md:text-8xl text-5xl  2xl:text-8xl italic">Bangladesh</span>
             </h2>
             <p className="text-gray-100 md:text-xl font-serif  md:text-justify">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae

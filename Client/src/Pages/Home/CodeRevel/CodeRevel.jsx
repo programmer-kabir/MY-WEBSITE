@@ -7,7 +7,7 @@ const CodeRevel = () => {
   return (
     <section className="w-10/12 mx-auto">
       <TitleSection
-        MainTitle={"Available in Tailwind HTML"}
+        MainTitle={"Available in HTML Tailwind"}
         SubTitle={
           "Components are now available in HTML , with the added advantage of effortlessly converting into other frameworks such as React, Svelte, Vue, etc., without the need to rewrite the entire component."
         }
@@ -47,7 +47,7 @@ const CodeRevel = () => {
           </div>
         </div>
         {/* body */}
-        <div className="mt-5 px-5 max-h-[400px] overflow-y-auto">
+        <div className="mt-5 px-5 max-h-[500px] overflow-y-auto">
           <div className="bg-[#727272] rounded">
             {activeTab === "CODE" && (
               <pre className="bg-gray-800  rounded text-white overflow-x-auto">
