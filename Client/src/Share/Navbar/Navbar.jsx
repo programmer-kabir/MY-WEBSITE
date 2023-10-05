@@ -21,7 +21,7 @@ const Navbar = () => {
 
     return (
         <div>
-            <div className="md:w-10/12 w-full h-[140px] md:px-10 px-4 my-auto pt-4 mx-auto font-markazi text-white">
+            <div className="md:w-10/12 w-full h-[140px] my-auto pt-4 mx-auto font-markazi text-white">
                 {/* first nav */}
                 <div className="md:flex justify-between items-center  hidden ">
                     <div className="md:block hidden text-md">
@@ -49,12 +49,18 @@ const Navbar = () => {
                 </div>
                 {/* second nav */}
 
-                <div class="border-t border-solid border-1  border-[#F8C55E] my-3 hidden md:block"></div>
+                <div class="border-t border-solid border-1 opacity-50  border-[#F8C55E] my-3 hidden md:block"></div>
 
 
                 <div className="flex justify-between items-center my-4">
                     <div>
-                        <h2 className="text-4xl ">Get Fire</h2>
+                    <h2 className="text-5xl font-markazi ">
+                  {" "}
+                  <span className="text-7xl text-violet-600 font-bold">
+                    X
+                  </span>{" "}
+                  Get Fire
+                </h2>
                     </div>
                     <div className="md:block hidden">
                         <ul className="flex gap-5 text-2xl">

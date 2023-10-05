@@ -21,8 +21,8 @@ const Purchase = () => {
           </div>
         </div>
         <div className="md:w-1/2  w-full space-y-4">
-          <h2 className="text-6xl font-markazi ">
-            All-Access Pass - Get Unlimited <br /> Access To All Products
+          <h2 className="md:text-6xl text-5xl font-markazi ">
+            All-Access Pass - Get Unlimited <br className=" md:block hidden" /> Access To All Products
           </h2>
           <p className="md:w-10/12 text-base text-gray-800 font-medium">
           Get Unlimited Access To All Templates and UI Kits . All Component
