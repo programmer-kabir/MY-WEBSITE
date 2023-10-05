@@ -1,13 +1,12 @@
 import React from 'react';
-import FetureTopSection from '../../Components/FetureTopSection/FetureTopSection';
-import TemplateTabs from '../../Components/TemplateTabs/TemplateTabs';
+import Purchase from '../../Components/Home/Purchase/Purchase';
+import Banner from '../../Components/Home/Banner/Banner';
 
 const Home = () => {
     return (
         <div>
-            <FetureTopSection></FetureTopSection>
-            {/* <TemplateTabs></TemplateTabs> */}
-            
+            <Banner />
+           {/* <Purchase /> */}
         </div>
     );
 };

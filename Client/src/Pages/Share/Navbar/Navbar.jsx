@@ -85,7 +85,7 @@ const Navbar = () => {
                                     </svg>
                                 </div>
                                 <span>
-                                    <ul id="tItem" className={`absolute px-4 bg-[#D8980E] text-white py-2 px-6 mx-auto mt-4 -ml-4 space-y-4 ${isDropdownOpen ? 'block' : 'hidden'}`}>
+                                    <ul id="tItem" className={`absolute bg-[#D8980E] text-white py-2 px-6 mx-auto mt-4 -ml-4 space-y-4 ${isDropdownOpen ? 'block' : 'hidden'}`}>
                                         <li> <a href="#">Service1</a></li>
                                         <li> <a href="#">Service2</a></li>
                                         <li> <a href="#">Service3</a></li>
@@ -119,7 +119,7 @@ const Navbar = () => {
                     </div>
                 </div>
                 {/* responsive menu */}
-                <div id="menuContent" className={`absolute w-full relative bg-[#D8980E] p-4 ${isResponsiveMenuOpen ? 'block' : 'hidden'}`}>
+                <div id="menuContent" className={` w-full relative bg-[#D8980E] p-4 ${isResponsiveMenuOpen ? 'block' : 'hidden'}`}>
                     <ul className="space-y-3 text-md text-white">
                         <li>Business Website</li>
                         <li>E-commerce Website</li>
