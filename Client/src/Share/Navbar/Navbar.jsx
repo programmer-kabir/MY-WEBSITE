@@ -1,6 +1,14 @@
-import { useEffect, useState } from "react";
-import { FaFacebook, FaGithub, FaTwitter, FaDiscord } from "react-icons/fa";
+import { useEffect, useRef, useState } from "react";
+import {
+  FaFacebook,
+  FaGithub,
+  FaTwitter,
+  FaDiscord,
+  FaChevronDown,
+} from "react-icons/fa";
+import { BiSolidDownArrow } from "react-icons/bi";
 import { Link, useLocation } from "react-router-dom";
+import useAuth from "../../Components/Hooks/useAuth";
 
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -8,8 +16,34 @@ const Navbar = () => {
   const [isResponsiveMenuOpen, setIsResponsiveMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [opacity, setOpacity] = useState(1);
-
+  const { user,logOut } = useAuth();
+  // image dropdown
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownBtnRef = useRef(null);
+  const dropdownContentRef = useRef(null);
   const location = useLocation();
+
+  const toggleImageDropdown = () => {
+    setIsOpen(!isOpen);
+  };
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        dropdownBtnRef.current &&
+        !dropdownBtnRef.current.contains(event.target) &&
+        dropdownContentRef.current &&
+        !dropdownContentRef.current.contains(event.target)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
+  // Nav scroll
   useEffect(() => {
     const handleScroll = () => {
       const isScrolled = window.scrollY > 50;
@@ -41,6 +75,10 @@ const Navbar = () => {
     setIsResponsiveMenuOpen(!isResponsiveMenuOpen);
   };
 
+  // user Logout
+  const handleLogOut = () =>{
+    logOut()
+  }
   return (
     <div
       className={`w-full fixed my-auto mx-auto font-markazi text-white ${
@@ -205,19 +243,58 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <div className=" md:block hidden">
+          <div className=" md:flex gap-5 items-center  hidden">
             <button
-              className="border border-[#D8980E] text-white  text-xl hover:text-white mr-5  rounded-md    hover:bg-[#D8980E] px-6 py-2"
-              style={{ transition: "background 0.4s ease-in-out" }}
-            >
-              Get Discount
-            </button>
-            <button
-              className="border bg-[#D8980E] text-xl text-white rounded-md hover:bg-white hover:text-black hover:border-[#D8980E] px-6 py-2"
+              className="border bg-[#D8980E] text-xl text-white rounded-md hover:bg-[#ffae00] hover:text-black hover:border-[#D8980E] px-6 py-2"
               style={{ transition: "background 0.4s ease-in-out" }}
             >
               Get Help
             </button>
+            {/* user */}
+            {user ? (
+              <div
+                className="flex items-center gap-1"
+                onClick={toggleImageDropdown}
+                ref={dropdownBtnRef}
+              >
+                {/* img dropdown */}
+                <img
+                  className="w-12 h-12 rounded-full"
+                  src={user?.photoURL}
+                  alt=""
+                />
+                {isOpen ? (
+                  <BiSolidDownArrow className="h-6 w-6 inline-block rotate-180" />
+                ) : (
+                  <BiSolidDownArrow className="h-6 w-6 inline-block" />
+                )}
+                <div
+                  ref={dropdownContentRef}
+                  className={`absolute right-32 mt-48 w-48 bg-gray-800 text-xl  rounded shadow-2xl transition-transform duration-200 ${
+                    isOpen ? "scale-100" : "scale-0"
+                  }`}
+                >
+                  <Link className="block px-4 py-2 hover:bg-gray-400 rounded hover:text-white">
+                    Profile
+                  </Link>
+                  <Link className="block px-4 py-2 hover:bg-gray-400 rounded hover:text-white">
+                    Dashboard
+                  </Link>
+                  {/* Logout */}
+                  <button onClick={handleLogOut} className="block w-full text-start px-4 py-2 hover:bg-gray-400 rounded hover:text-white">Logout</button>
+                  
+                </div>
+              </div>
+            ) : (
+              <Link to="/login">
+                <button
+                  className="border border-[#D8980E] text-white  text-xl hover:text-white  rounded-md    hover:bg-[#D8980E] px-6 py-2"
+                  style={{ transition: "background 0.4s ease-in-out" }}
+                >
+                  Login
+                </button>
+              </Link>
+            )}
           </div>
           <div className="md:hidden block">
             <button
