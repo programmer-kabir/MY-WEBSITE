@@ -19,7 +19,10 @@ const Components = () => {
     "Profile",
     "Footer",
     "Blog",
-    "E-commerce",
+    "Banner",
+    "Faq",
+    "Reviews",
+    "Pricing",
     "contacts",
     "Tables",
     "Call To Action",
@@ -77,7 +80,7 @@ const Components = () => {
                     activeTab === tab
                       ? "bg-yellow-500 text-gray-700 pt-2 border-b-2 border-blue-950"
                       : filteredTabs.includes(tab)
-                      ? "hover:bg-gray-600 border-2"
+                      ? "hover:bg-[#0A2C88] hover:text-white border-2 hover:border-[#0A2C88]"
                       : "opacity-50 border border-gray-900 cursor-not-allowed"
                   }`}
                   onClick={() =>
