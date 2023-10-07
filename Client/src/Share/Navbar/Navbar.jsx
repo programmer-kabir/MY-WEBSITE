@@ -102,7 +102,7 @@ const Navbar = () => {
           <div className="md:block hidden">
             <ul className="flex gap-5 text-2xl">
               <li>
-                <a href="#">Home</a>
+                <a href="/">Home</a>
               </li>
 
               {/* dropdown items */}
@@ -152,7 +152,7 @@ const Navbar = () => {
               </li>
               {/* end one */}
               <li>
-                <a href="#">Components</a>
+                <a href="/components">Components</a>
               </li>
               {/* dropdown 2nd */}
               <li

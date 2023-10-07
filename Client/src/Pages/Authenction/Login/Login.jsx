@@ -4,6 +4,7 @@ import login from "../../../assets/Authenction/Animation - 1696528181723.json";
 import { FaFacebook, FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
+
 const Login = () => {
   return (
     <section className="w-10/12 pt-24 mx-auto">
