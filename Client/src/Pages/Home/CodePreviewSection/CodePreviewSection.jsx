@@ -13,8 +13,9 @@ const CodePreviewSection = () => {
           "There are many features added to components, and here shows the code. We provide the best design quality and clean code. All code is for free!"
         }
       ></TitleSection>
+
       {/* tabs for show basic components  */}
-      <div className="">
+      <div>
         <div className="flex font-medium mb-2 space-x-4 justify-center">
           {["HTML", "Tailwind", "Bootstrap", "React"].map((tab) => (
             <button
