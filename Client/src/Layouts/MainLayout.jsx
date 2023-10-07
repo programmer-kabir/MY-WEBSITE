@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 import Navbar from '../Share/Navbar/Navbar';
 import Footer from '../Share/Footer/Footer';
-import LoadingPage from '../Share/LoadingPage/LoadingPage';
+import Loading from '../Share/Loading/Loading';
 
 const MainLayout = () => {
     const [isLoading, setIsLoading] = useState(true);
@@ -19,7 +19,7 @@ const MainLayout = () => {
             {isLoading ? (
                 // Render a loading indicator (e.g., a spinner) while loading
                 <div>
-                    <LoadingPage></LoadingPage>
+                    <Loading />
                 </div>
             ) : (
                 // Render the Navbar and content when not loading

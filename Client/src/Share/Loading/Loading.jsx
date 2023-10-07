@@ -1,6 +1,6 @@
 import React from 'react';
 
-const LoadingPage = () => {
+const Loading = () => {
     return (
         <div className='w-full h-screen flex items-center justify-center'>
 
@@ -10,4 +10,4 @@ const LoadingPage = () => {
     );
 };
 
-export default LoadingPage;
+export default Loading;
