@@ -37,7 +37,7 @@ const Components = () => {
     setFilteredTabs(filtered);
 
     if (!filtered.includes(activeTab)) {
-      setActiveTab(""); // Clear the active tab if it's not in the filtered results
+      setActiveTab(""); 
     }
   };
 
