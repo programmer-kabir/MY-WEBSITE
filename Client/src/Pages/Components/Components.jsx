@@ -1,48 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PagesBanner from "../../Share/PagesBanner/PagesBanner";
-
 import "./componentsCss.css";
 import TitleSection from "../../Share/TitleSection/TitleSection";
-import NavCompo from "../../Components/ComponentsResource/NavCompo/NavCompo";
-import CardCompo from "../../Components/ComponentsResource/CardCompo/CardCompo";
-import { AiOutlineSearch } from "react-icons/ai";
-const Components = () => {
-  const tabsArray = [
-    "Navbar",
-    "Hero",
-    "Card",
-    "Register",
-    "Login",
-    "Popup",
-    "Form",
-    "Newsletter",
-    "Profile",
-    "Footer",
-    "Blog",
-    "Banner",
-    "Faq",
-    "Reviews",
-    "Pricing",
-    "contacts",
-    "Tables",
-    "Call To Action",
-    "Stats",
-    "Teams",
-  ];
-  const [activeTab, setActiveTab] = useState("Navbar");
-  const [searchTerm, setSearchTerm] = useState("");
-  const [filteredTabs, setFilteredTabs] = useState(tabsArray);
-  const handleSearch = (e) => {
-    setSearchTerm(e.target.value);
-    const filtered = tabsArray.filter((tab) =>
-      tab.toLowerCase().includes(e.target.value.toLowerCase())
-    );
-    setFilteredTabs(filtered);
+import ComponentsGet from "../../API/ComponentsGet";
+import ComponentsPreview from "../../Components/Hooks/ComponentsPreview";
 
-    if (!filtered.includes(activeTab)) {
-      setActiveTab(""); 
+
+
+const Components = () => {
+  const [components] = ComponentsGet();
+  const [categoryNames, setCategoryNames] = useState([]);
+  const [activeTab, setActiveTab] = useState("");
+
+  // Here is set data our category in components lists 
+
+  const navBar = components.filter(nav => nav.category === 'NavBar')
+  const hero = components.filter(nav => nav.category === 'hero')
+  const card = components.filter(nav => nav.category === 'card')
+
+  useEffect(() => {
+    // Extract unique category names from components and set them
+    const uniqueCategoryNames = Array.from(
+      new Set(components.map((component) => component.category.toLowerCase())) // Convert category to lowercase
+    );
+    setCategoryNames(uniqueCategoryNames);
+
+    // Set the active tab to the first category
+    if (uniqueCategoryNames.length > 0) {
+      setActiveTab(uniqueCategoryNames[0]);
     }
-  };
+  }, [components]);
 
   return (
     <div className="w-full">
@@ -56,57 +43,47 @@ const Components = () => {
       <div>
         <div className="my-20">
           <div className="w-10/12 mx-auto">
-            <div className="flex justify-end my-2">
-              <div class="relative flex items-center border border-gray-800 py-2 rounded-lg overflow-hidden">
-                <div class="grid place-items-center h-full w-12 text-gray-300">
-                  <AiOutlineSearch className="h-6 w-6" />
-                </div>
-
-                <input
-                  class="peer h-full w-full  outline-none text-xl font-markazi text-gray-800 pr-2"
-                  type="search"
-                  id="search"
-                  placeholder="Search something.."
-                  value={searchTerm}
-                  onChange={handleSearch}
-                />
-              </div>
-            </div>
-            <div className="flex flex-wrap gap-5 font-medium mb-2 space-x-6 justify-center    py-3">
-              {tabsArray.map((tab) => (
+            <div className="flex flex-wrap gap-5 font-medium mb-2 space-x-6 justify-center py-3">
+              {categoryNames.map((category) => (
                 <button
-                  key={tab}
-                  className={`px-5 py-2 rounded-lg ${
-                    activeTab === tab
-                      ? "bg-yellow-500 text-gray-700 pt-2 border-b-2 border-blue-950"
-                      : filteredTabs.includes(tab)
-                      ? "hover:bg-[#0A2C88] hover:text-white border-2 hover:border-[#0A2C88]"
-                      : "opacity-50 border border-gray-900 cursor-not-allowed"
+                  key={category}
+                  className={`px-5 py-2 rounded-lg ${activeTab === category.toLowerCase()
+                    ? "bg-yellow-500 text-gray-700 pt-2 border-b-2 border-blue-950"
+                    : "opacity-50 border border-gray-900 cursor-pointer"
                   }`}
-                  onClick={() =>
-                    filteredTabs.includes(tab) && setActiveTab(tab)
-                  }
-                  disabled={!filteredTabs.includes(tab)}
+                  onClick={() => setActiveTab(category.toLowerCase())}
                 >
-                  {tab}
+                  {category}
                 </button>
               ))}
             </div>
           </div>
+
+
+            {/* Here is the set category to list and show website  */}
+          
           <div>
             <div
-              className={`tab-content  ${
-                activeTab === "Navbar" ? "active" : ""
-              }`}
+              className={`tab-content  ${activeTab === "navbar" ? "active" : ""
+                }`}
             >
-              <NavCompo></NavCompo>
+              {activeTab === "navbar" && <ComponentsPreview categoryName={navBar}></ComponentsPreview>}
             </div>
             <div
-              className={`tab-content  ${activeTab === "Card" ? "active" : ""}`}
+              className={`tab-content  ${activeTab === "hero" ? "active" : ""}`}
             >
-              <CardCompo></CardCompo>
+              {activeTab === "hero" && <ComponentsPreview categoryName={hero}></ComponentsPreview>
+}
+            </div>
+            <div
+              className={`tab-content  ${activeTab === "card" ? "active" : ""}`}
+            >
+              {activeTab === "card" && <ComponentsPreview categoryName={card}></ComponentsPreview>}
             </div>
           </div>
+
+            {/* Here is the end set category to list and show website  */}
+
         </div>
       </div>
     </div>
