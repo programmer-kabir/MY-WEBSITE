@@ -190,7 +190,7 @@ const Navbar = () => {
               </li>
               {/* end one */}
               <li>
-                <a href="/components">Components</a>
+                <Link to="/components">Components</Link>
               </li>
               {/* dropdown 2nd */}
               <li
@@ -239,7 +239,7 @@ const Navbar = () => {
               </li>
               {/* dropdown end */}
               <li>
-                <a href="#">Blogs</a>
+                <Link to='/blogs'>Blogs</Link>
               </li>
             </ul>
           </div>
