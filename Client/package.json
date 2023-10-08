@@ -12,7 +12,6 @@
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
-    "@mui/material": "^5.14.12",
     "@tanstack/react-query": "^4.35.7",
     "axios": "^1.5.1",
     "firebase": "^10.4.0",

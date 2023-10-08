@@ -1,54 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PagesBanner from "../../Share/PagesBanner/PagesBanner";
-import { FaDesktop, FaPowerOff, FaReact, FaRegCopy, FaRegEye } from "react-icons/fa";
-import { HiOutlineDevicePhoneMobile } from "react-icons/hi2";
-import { BsEye, BsEyeFill } from "react-icons/bs";
 import "./componentsCss.css";
 import TitleSection from "../../Share/TitleSection/TitleSection";
-import NavCompo from "../../Components/ComponentsResource/NavCompo/NavCompo";
-import CardCompo from "../../Components/ComponentsResource/CardCompo/CardCompo";
-import { AiOutlineHtml5, AiOutlineSearch } from "react-icons/ai";
-import toast from 'react-hot-toast'
-const Components = () => {
-  const tabsArray = [
-    "Navbar",
-    "Hero",
-    "Card",
-    "Register",
-    "Login",
-    "Popup",
-    "Form",
-    "Newsletter",
-    "Profile",
-    "Footer",
-    "Blog",
-    "Banner",
-    "Faq",
-    "Reviews",
-    "Pricing",
-    "contacts",
-    "Tables",
-    "Call To Action",
-    "Stats",
-    "Teams",
-  ];
-  const [activeTab, setActiveTab] = useState("Navbar");
-  const [searchTerm, setSearchTerm] = useState("");
-  const [filteredTabs, setFilteredTabs] = useState(tabsArray);
-  const [showModal, setShowModal] = useState(false);
-  const [activeIcon, setActiveIcon] = useState("desktop");
-  const [activeFormate, setActiveFormate] = useState("preview");
-  const handleSearch = (e) => {
-    setSearchTerm(e.target.value);
-    const filtered = tabsArray.filter((tab) =>
-      tab.toLowerCase().includes(e.target.value.toLowerCase())
-    );
-    setFilteredTabs(filtered);
+import ComponentsGet from "../../API/ComponentsGet";
+import ComponentsPreview from "../../Components/Hooks/ComponentsPreview";
 
-    if (!filtered.includes(activeTab)) {
-      setActiveTab("");
+
+
+const Components = () => {
+  const [components] = ComponentsGet();
+  const [categoryNames, setCategoryNames] = useState([]);
+  const [activeTab, setActiveTab] = useState("");
+
+  // Here is set data our category in components lists 
+
+  const navBar = components.filter(nav => nav.category === 'NavBar')
+  const hero = components.filter(nav => nav.category === 'hero')
+  const card = components.filter(nav => nav.category === 'card')
+
+  useEffect(() => {
+    // Extract unique category names from components and set them
+    const uniqueCategoryNames = Array.from(
+      new Set(components.map((component) => component.category.toLowerCase())) // Convert category to lowercase
+    );
+    setCategoryNames(uniqueCategoryNames);
+
+    // Set the active tab to the first category
+    if (uniqueCategoryNames.length > 0) {
+      setActiveTab(uniqueCategoryNames[0]);
     }
-  };
+  }, [components]);
 
   // Copy
   const handleCopy = () =>{
@@ -66,180 +47,47 @@ const Components = () => {
       <div>
         <div className="my-20">
           <div className="w-10/12 mx-auto">
-            <div className="flex justify-end my-2">
-              <div class="relative flex items-center border border-gray-800 py-2 rounded-lg overflow-hidden">
-                <div class="grid place-items-center h-full w-12 text-gray-300">
-                  <AiOutlineSearch className="h-6 w-6" />
-                </div>
-
-                <input
-                  class="peer h-full w-full  outline-none text-xl font-markazi text-gray-800 pr-2"
-                  type="search"
-                  id="search"
-                  placeholder="Search something.."
-                  value={searchTerm}
-                  onChange={handleSearch}
-                />
-              </div>
-            </div>
-            <div className="flex flex-wrap gap-5 font-medium mb-2 space-x-6 justify-center    py-3">
-              {tabsArray.map((tab) => (
+            <div className="flex flex-wrap gap-5 font-medium mb-2 space-x-6 justify-center py-3">
+              {categoryNames.map((category) => (
                 <button
-                  key={tab}
-                  className={`px-5 py-2 rounded-lg ${
-                    activeTab === tab
-                      ? "bg-yellow-500 text-gray-700 pt-2 border-b-2 border-#3056D3-950"
-                      : filteredTabs.includes(tab)
-                      ? "hover:bg-[#0A2C88] hover:text-white border-2 hover:border-[#0A2C88]"
-                      : "opacity-50 border border-gray-900 cursor-not-allowed"
+                  key={category}
+                  className={`px-5 py-2 rounded-lg ${activeTab === category.toLowerCase()
+                    ? "bg-yellow-500 text-gray-700 pt-2 border-b-2 border-blue-950"
+                    : "opacity-50 border border-gray-900 cursor-pointer"
                   }`}
-                  onClick={() =>
-                    filteredTabs.includes(tab) && setActiveTab(tab)
-                  }
-                  disabled={!filteredTabs.includes(tab)}
+                  onClick={() => setActiveTab(category.toLowerCase())}
                 >
-                  {tab}
+                  {category}
                 </button>
               ))}
             </div>
           </div>
+
+
+            {/* Here is the set category to list and show website  */}
+          
           <div>
             <div
-              className={`tab-content  ${
-                activeTab === "Navbar" ? "active" : ""
-              }`}
+              className={`tab-content  ${activeTab === "navbar" ? "active" : ""
+                }`}
             >
-              {/* <NavCompo></NavCompo> */}
-              <div className="w-10/12 mx-auto">
-                <button
-                  onClick={() => setShowModal(true)}
-                  className="bg-blue-500 text-white py-2 px-4 rounded"
-                >
-                  Get Modal
-                </button>
-
-                {showModal && (
-                  <div className="fixed font-markazi inset-0 z-50 flex items-center justify-center">
-                    <div className="absolute inset-0 bg-black opacity-40 backdrop-blur-md"></div>
-                    {/* <-- This is the overlay */}
-                    <div className="bg-white w-11/12 h-[91%] p-8 rounded shadow-lg relative z-10">
-                      <span
-                        onClick={() => setShowModal(false)}
-                        className="absolute top-6 right-4 text-2xl cursor-pointer"
-                      >
-                        <FaPowerOff />
-                      </span>
-
-                      <div className="flex justify-between items-center pt-5">
-                        <p className="text-4xl">Name</p>
-                        {/* Desktop and Mobile Icons */}
-                        <div className="flex gap-2 bg-gray-300 rounded-md p-1">
-                          <div
-                            onClick={() => setActiveIcon("desktop")}
-                            className={`p-2 transition-all duration-300 ${
-                              activeIcon === "desktop"
-                                ? "bg-white rounded-md"
-                                : "bg-gray-300"
-                            }`}
-                          >
-                            <FaDesktop
-                              size={20}
-                              color={
-                                activeIcon === "desktop" ? "#3056D3" : "black"
-                              }
-                            />
-                          </div>
-                          <div
-                            onClick={() => setActiveIcon("mobile")}
-                            className={`p-2 transition-all duration-300 ${
-                              activeIcon === "mobile"
-                                ? "bg-white rounded-md"
-                                : "bg-gray-300"
-                            }`}
-                          >
-                            <HiOutlineDevicePhoneMobile
-                              size={20}
-                              color={
-                                activeIcon === "mobile" ? "#3056D3" : "black"
-                              }
-                            />
-                          </div>
-                        </div>
-                        {/* PREVIEW,HTML, REACT ,COPY ICONS */}
-                        <div className="flex gap-2">
-                          <div className="flex gap-2 bg-gray-300 rounded-md p-1">
-                            <div
-                              onClick={() => setActiveFormate("preview")}
-                              className={`p-2 cursor-pointer transition-all duration-300 ${
-                                activeFormate === "preview"
-                                  ? "bg-white rounded-md"
-                                  : "bg-gray-300"
-                              }`}
-                            >
-                              <FaRegEye
-                                size={20}
-                                className="inline items-center"
-                                color={
-                                  activeFormate === "preview" ? "#3056D3" : "black"
-                                }
-                              />
-                              <span className="inline text-xl pl-1">
-                                Preview
-                              </span>
-                            </div>
-                            <div
-                              onClick={() => setActiveFormate("html")}
-                              className={`p-2 transition-all cursor-pointer duration-300 ${
-                                activeFormate === "html"
-                                  ? "bg-white rounded-md"
-                                  : "bg-gray-300"
-                              }`}
-                            >
-                              <AiOutlineHtml5
-                                size={20}
-                                className="inline items-center"
-                                color={
-                                  activeFormate === "html" ? "#3056D3" : "black"
-                                }
-                              />
-                              <span className="inline text-xl pl-1">Html</span>
-                            </div>
-                            <div
-                              onClick={() => setActiveFormate("react")}
-                              className={`p-2 transition-all cursor-pointer duration-300 ${
-                                activeFormate === "react"
-                                  ? "bg-white rounded-md"
-                                  : "bg-gray-300"
-                              }`}
-                            >
-                              <FaReact
-                                size={20}
-                                className="inline items-center"
-                                color={
-                                  activeFormate === "react" ? "#3056D3" : "black"
-                                }
-                              />
-                              <span className="inline text-xl pl-1">React</span>
-                            </div>
-                          </div>
-                            <button className="px-5" onClick={handleCopy}><FaRegCopy   size={20}/></button>
-                        </div>
-                      </div>
-
-                      <div>{/* Other content here */}</div>
-                    </div>
-                  </div>
-                )}
-              </div>
+              {activeTab === "navbar" && <ComponentsPreview categoryName={navBar}></ComponentsPreview>}
             </div>
             <div
-              className={`tab-content  ${activeTab === "Card" ? "active" : ""}`}
+              className={`tab-content  ${activeTab === "hero" ? "active" : ""}`}
             >
-              <CardCompo></CardCompo>
-             
-             
+              {activeTab === "hero" && <ComponentsPreview categoryName={hero}></ComponentsPreview>
+}
+            </div>
+            <div
+              className={`tab-content  ${activeTab === "card" ? "active" : ""}`}
+            >
+              {activeTab === "card" && <ComponentsPreview categoryName={card}></ComponentsPreview>}
             </div>
           </div>
+
+            {/* Here is the end set category to list and show website  */}
+
         </div>
       </div>
     </div>

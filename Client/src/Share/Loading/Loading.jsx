@@ -4,7 +4,7 @@ const Loading = () => {
     return (
         <div className='w-full h-screen flex items-center justify-center'>
 
-            <div class="lds-dual-ring"></div>
+            <div className="lds-dual-ring"></div>
 
         </div>
     );
