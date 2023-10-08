@@ -11,6 +11,8 @@ const Components = () => {
   const [components] = ComponentsGet();
   const [categoryNames, setCategoryNames] = useState([]);
   const [activeTab, setActiveTab] = useState("");
+  // Modal
+  const [showModal, setShowModal] = useState(false);
 
   // Here is set data our category in components lists 
 
