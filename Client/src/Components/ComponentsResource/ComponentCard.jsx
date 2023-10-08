@@ -129,7 +129,10 @@ const ComponentCard = ({ item }) => {
                         </div>
                       </div>
 
-                      <div>{/* Other content here */}</div>
+                      <div>
+                      {activeFormate === 'html' && <p>This is HTML</p>}
+                      {activeFormate === 'react' && <p>This is React</p>}
+                      </div>
                     </div>
                   </div>
                 )}
