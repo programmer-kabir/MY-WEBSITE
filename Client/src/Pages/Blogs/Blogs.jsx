@@ -5,6 +5,9 @@ import fakeBlogs from "./fakeBlogs";
 import { FiHeart } from "react-icons/fi";
 import { FaBookmark } from "react-icons/fa";
 import { BiSolidShareAlt } from "react-icons/bi";
+import { FcCalendar } from "react-icons/fc";
+import { HiOutlineEye } from "react-icons/Hi";
+
 const Blogs = () => {
   const [blogs] = fakeBlogs();
   const truncateDescription = (description) => {
@@ -26,16 +29,16 @@ const Blogs = () => {
       <div className="my-20 w-10/12  mx-auto">
         <div className=" grid grid-cols-3 gap-5 ">
           {blogs.map((blog) => (
-            <div className="border bg-gray-800 text-gray-50 rounded-lg overflow-hidden">
+            <div className="border bg-[#0A2C88] text-gray-50 rounded-lg overflow-hidden">
               <img
-              className="rounded-t-lg w-full h-auto transform hover:scale-110 hover:rotate-2 duration-200"
+              className="rounded-t-lg w-full h-auto transform hover:scale-110 duration-200"
                 src="https://images.unsplash.com/photo-1592609931095-54a2168ae893?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
                 alt=""
               />
               {/* Content */}
-              <div className="pt-2 flex justify-between px-5">
+              <div className="pt-8 flex justify-between px-5">
                   <div className="flex gap-5">
-                    <FiHeart size={20} />
+                    <FiHeart size={25} />
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 512 512"
@@ -45,18 +48,18 @@ const Blogs = () => {
                     </svg>
                   </div>
                   <div className="flex gap-5">
-                    <BiSolidShareAlt size={22} />
-                    <FaBookmark size={20} />
+                    <BiSolidShareAlt size={25} />
+                    <FaBookmark size={25} />
                   </div>
-                </div>
-              <div className="px-3 pt-3">
+              </div>
+              <div className=" space-y-3 px-5 pt-3">
                 <p className="text-2xl font-bold">{blog.title}</p>
                 <p className="text-base text-justify">
                   {truncateDescription(blog.description)}
                 </p>
-                <div className="px-5 py-2 flex justify-between font-medium">
-                  <p> Date:{blog.date}</p>
-                  <p>Views : {blog.views}</p>
+                <div className=" py-4 flex justify-between font-medium ">
+                  <p className="flex items-center gap-3"> <FcCalendar className="text-2xl"></FcCalendar>{blog.date}</p>
+                  <p  className="flex items-center gap-3"><HiOutlineEye className="text-2xl"></HiOutlineEye> {blog.views}</p>
                 </div>
                 
               </div>
