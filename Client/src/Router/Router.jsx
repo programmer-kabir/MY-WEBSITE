@@ -5,6 +5,7 @@ import Login from "../Pages/Authenction/Login/Login";
 import Register from "../Pages/Authenction/Register/Register";
 import Components from "../Pages/Components/Components";
 import Blogs from "../Pages/Blogs/Blogs";
+import BlogDetails from "../Pages/Blogs/BlogDetails";
 
 const router = createBrowserRouter([
   {
@@ -17,20 +18,24 @@ const router = createBrowserRouter([
       },
       {
         path: "/components",
-        element: <Components />
+        element: <Components />,
       },
       {
         path: "/blogs",
-        element: <Blogs />
+        element: <Blogs />,
+      },
+      {
+        path:"/blogs/:id",
+        element:<BlogDetails />
       },
       {
         path: "/login",
-        element: <Login />
+        element: <Login />,
       },
       {
-        path:'/register',
-      element:<Register />
-      }
+        path: "/register",
+        element: <Register />,
+      },
     ],
   },
 ]);
