@@ -4,6 +4,8 @@ import { AiOutlineHtml5, AiOutlineSearch } from "react-icons/ai";import { FaDesk
 import { HiOutlineDevicePhoneMobile } from "react-icons/hi2";
 import { BsEye, BsEyeFill } from "react-icons/bs";
 import toast from 'react-hot-toast'
+
+
 const ComponentCard = ({ item }) => {
     const [showModal, setShowModal] = useState(false);
     const [activeIcon, setActiveIcon] = useState("desktop");
@@ -11,7 +13,7 @@ const ComponentCard = ({ item }) => {
     const handleCopy = () =>{
         toast.success('copy success')
       }
-    const { title, image } = item
+    const { title, image,htmlCode } = item
     return (
         <div className='p-4  border cardShadow my-5'>
             <div>
@@ -21,6 +23,7 @@ const ComponentCard = ({ item }) => {
                 <h2 className='text-2xl font-semibold'>{title}</h2>
                 <button   onClick={() => setShowModal(true)} className='px-4 rounded-md py-2 bg-[#EAB308]  font-semibold text-md'>Get Code</button>
             </div>
+
             {showModal && (
                   <div className="fixed font-markazi inset-0 z-50 flex items-center justify-center">
                     <div className="absolute inset-0 bg-black opacity-40 backdrop-blur-md"></div>
@@ -130,8 +133,9 @@ const ComponentCard = ({ item }) => {
                       </div>
 
                       <div>
-                      {activeFormate === 'html' && <p>This is HTML</p>}
-                      {activeFormate === 'react' && <p>This is React</p>}
+                      {activeFormate === "preview" &&  <h2>Preview</h2>}
+                      {activeFormate === "html" &&  <>{htmlCode}</>}
+                      {activeFormate === "react" &&  <>{htmlCode}</>}
                       </div>
                     </div>
                   </div>
