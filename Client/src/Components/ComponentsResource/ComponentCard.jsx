@@ -134,10 +134,10 @@ const ComponentCard = ({ item }) => {
             </div>
             <div className="h-full">
               {activeFormate === "preview" && <h2>Preview</h2>}
-              {activeFormate === "html" && <div className="bg-gray-500 mt-5 rounded-md px-5 py-2 h-[85%] overflow-y-auto text-xl">
+              {activeFormate === "html" && <div className="bg-gray-500 text-gray-300 mt-5 rounded-md px-5 py-2 h-[85%] overflow-y-auto text-xl">
                 {htmlCode}
                 </div>}
-              {activeFormate === "react" && <div className="bg-gray-500 mt-5 rounded-md px-5 py-2 h-[85%] overflow-y-auto text-xl">
+              {activeFormate === "react" && <div className="bg-gray-500 text-gray-300 mt-5 rounded-md px-5 py-2 h-[85%] overflow-y-auto text-xl">
                 {reactCode}
                 </div>}
             </div>
