@@ -35,24 +35,22 @@ const Footer = () => {
                 Resources
               </h3>
               <div className="flex flex-col  space-y-4 pt-2">
-                <Link className="text-base font-medium">Update Logs</Link>
-                <Link className="text-base font-medium">Roadmap</Link>
+                <Link className="text-base font-medium">Tailwind Component</Link>
                 <Link className="text-base font-medium">
-                  Tailwind UI Components
+                 Service
                 </Link>
-                <Link className="text-base font-medium">Tailwind CSS</Link>
+                <Link to='/about' className="text-base font-medium">About us</Link>
+                <Link to='/contact' className="text-base font-medium">Contact us</Link>
               </div>
             </div>
             {/* 3rd */}
             <div className="space-y-3 md:w-1/4 md:pl-5 pt-10 md:pt-0">
               <h3 className="uppercase text-gray-50 font-markazi text-3xl font-medium">
-                Useful Links
+              Legal
               </h3>
               <div className="flex flex-col  space-y-4 pt-2">
-                <Link className="text-base font-medium">License</Link>
-                <Link className="text-base font-medium">Privacy policy</Link>
-                <Link className="text-base font-medium">Refund Policy</Link>
-                <Link className="text-base font-medium">Free Download</Link>
+                <Link to='license' className="text-base font-medium">License</Link>
+                <Link to='/terms_Condition' className="text-base font-medium">Terms & Condition</Link>
               </div>
             </div>
             {/* 4th */}

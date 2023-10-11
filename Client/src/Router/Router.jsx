@@ -6,6 +6,10 @@ import Register from "../Pages/Authenction/Register/Register";
 import Components from "../Pages/Components/Components";
 import Blogs from "../Pages/Blogs/Blogs";
 import BlogDetails from "../Pages/Blogs/BlogDetails";
+import TermsAndCondition from "../Pages/Terms/TermsAndCondition";
+import License from "../Pages/License/License";
+import AboutUs from "../Pages/AboutUs/AboutUs";
+import ContactUs from "../Pages/ContactUs/ContactUs";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +39,22 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register />,
+      },
+      {
+        path: "/terms_Condition",
+        element: <TermsAndCondition />,
+      },
+      {
+        path: "/license",
+        element: <License />,
+      },
+      {
+        path: "/about",
+        element: <AboutUs />,
+      },
+      {
+        path: "/contact",
+        element: <ContactUs />,
       },
     ],
   },
