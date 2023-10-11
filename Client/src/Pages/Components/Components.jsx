@@ -39,11 +39,12 @@ const Components = () => {
   }
   return (
     <div className="w-full">
-      <PagesBanner title={"Components To Easy Access"}></PagesBanner>
+      <PagesBanner title={"Components To Easy Access"}  pera={'There are 100+ components to startup in your business and customize to easy in follow our documents'} btn={'Get Products'}></PagesBanner>
       <TitleSection
         MainTitle={"Components"}
         SubTitle={
           "There are all components get you for Free. You can customize any components to easy. High-quality UI elements handcrafted to solve your design and coding challenges for making your web project closer to launch. All components are available in HTML and Tailwind to use React. "
+          
         }
       ></TitleSection>
       <div>

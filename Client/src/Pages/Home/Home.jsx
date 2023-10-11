@@ -7,6 +7,7 @@ import Review from "./Review/Review";
 import CodeRevel from './CodeRevel/CodeRevel';
 import AboutSection from './AboutSection/AboutSection';
 import Newsletter from './Newsletter/Newsletter';
+import Team from '../../Share/Team/Team';
 
 const Home = () => {
   return (
@@ -18,6 +19,7 @@ const Home = () => {
       <Purchase />
       <AboutSection></AboutSection>
       <Newsletter></Newsletter>
+      <Team></Team>
       <Review></Review>
 
     </div>
