@@ -16,15 +16,15 @@ const Footer = () => {
             <div className="md:w-1/3">
               <Link to=''>
                 <h2 className="text-5xl font-markazi ">
-                  {" "}
+                  
                   <span className="text-7xl text-violet-600 font-bold">
                     X
-                  </span>{" "}
+                  </span>
                   Get Fire
                 </h2>
               </Link>
               <p className="text-lg text-justify">
-                 Dont waste your time, chose your components to get work your project.
+                 Don't waste your time, chose your components to get work your project.
               </p>
             </div>
 
