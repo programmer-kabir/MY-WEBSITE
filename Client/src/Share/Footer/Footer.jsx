@@ -14,7 +14,7 @@ const Footer = () => {
         <div className="w-10/12 container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
           <div className=" w-full md:flex text-start">
             <div className="md:w-1/3">
-              <Link>
+              <Link to=''>
                 <h2 className="text-5xl font-markazi ">
                   {" "}
                   <span className="text-7xl text-violet-600 font-bold">
@@ -24,8 +24,7 @@ const Footer = () => {
                 </h2>
               </Link>
               <p className="text-lg text-justify">
-                Handcrafted essential line icons for modern user interfaces of
-                web, mobile, and desktop app design and development projects.
+                 Dont waste your time, chose your components to get work your project.
               </p>
             </div>
 
@@ -35,12 +34,11 @@ const Footer = () => {
                 Resources
               </h3>
               <div className="flex flex-col  space-y-4 pt-2">
-                <Link className="text-base font-medium">Update Logs</Link>
-                <Link className="text-base font-medium">Roadmap</Link>
-                <Link className="text-base font-medium">
-                  Tailwind UI Components
-                </Link>
-                <Link className="text-base font-medium">Tailwind CSS</Link>
+                <Link to='/components' className="text-base font-medium">Components</Link>
+                <Link to='#' className="text-base font-medium">HTML Template</Link>
+                <Link to='#' className="text-base font-medium">Bootstrap Template</Link>
+                <Link to='#' className="text-base font-medium">React Template</Link>
+                
               </div>
             </div>
             {/* 3rd */}
@@ -49,10 +47,10 @@ const Footer = () => {
                 Useful Links
               </h3>
               <div className="flex flex-col  space-y-4 pt-2">
-                <Link className="text-base font-medium">License</Link>
-                <Link className="text-base font-medium">Privacy policy</Link>
-                <Link className="text-base font-medium">Refund Policy</Link>
-                <Link className="text-base font-medium">Free Download</Link>
+                <Link to='#' className="text-base font-medium">License</Link>
+                <Link to='#' className="text-base font-medium">Privacy policy</Link>
+                <Link to='#' className="text-base font-medium">Refund Policy</Link>
+                <Link to='#' className="text-base font-medium">Free Download</Link>
               </div>
             </div>
             {/* 4th */}

@@ -93,7 +93,7 @@ const Blogs = () => {
   const [modal, setModal] = useState(false);
   return (
     <div>
-      <PagesBanner title={"Blogs To Easy Reading"} />
+      <PagesBanner title={"Blogs To Easy Reading"}  pera={'Our all products details and how to use your business website and what is important our product for your project all of above shear our team in blog post.If your need any question you can ask fel free to our support tem'} btn={'Get Free Quote'}/>
       <TitleSection
         MainTitle={"Blogs"}
         SubTitle={
