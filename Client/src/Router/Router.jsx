@@ -12,6 +12,7 @@ import License from "../Pages/License/License";
 import AboutUs from "../Pages/AboutUs/AboutUs";
 import ContactUs from "../Pages/ContactUs/ContactUs";
 import Dashboard from "../Layouts/Dashboard";
+import PrivateRoute from "./privetRoute";
 
 const router = createBrowserRouter([
   {
@@ -35,17 +36,18 @@ const router = createBrowserRouter([
         element: <Blogs />,
       },
       {
-        path:"/blogs/:id",
-        element:<BlogDetails />
+        path: "/blogs/:id",
+        element: <BlogDetails />,
       },
+      // Todo
       {
-        path: "/login",
+        path: "/web-site-admin-login",
         element: <Login />,
       },
-      {
-        path: "/register",
-        element: <Register />,
-      },
+      // {
+      //   path: "/register",
+      //   element: <Register />,
+      // },
       {
         path: "/terms_Condition",
         element: <TermsAndCondition />,
@@ -63,10 +65,11 @@ const router = createBrowserRouter([
         element: <ContactUs />,
       },
     ],
-  },{
-    path:"/dashboard",
-    element:<Dashboard />
-  }
+  },
+  {
+    path: "/admin-panel-dashboard",
+    element: <PrivateRoute><Dashboard /></PrivateRoute>
+  },
 ]);
 
 export default router;

@@ -8,6 +8,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../../Components/Hooks/useAuth";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
+import { BiLogoGmail } from "react-icons/bi";
 const Login = () => {
   const { singIn, githubLogin, setLoading, googleSingIn, facebookLogin } =
     useAuth();
@@ -22,9 +23,15 @@ const Login = () => {
     formState: { errors },
   } = useForm();
   // Button Disable criteria
-  const watchedFields = watch();
-  const allFieldsFilled = watchedFields.email && watchedFields.Password;
+  // const watchedFields = watch();
+  // const allFieldsFilled = watchedFields.email && watchedFields.Password;
   // Email Sign up
+
+  // todo
+  // Just demo
+  const watchedFields = watch(["email", "Password"]);
+  const isLoginInfoValid = watchedFields.email === 'admin@gmail.com' && watchedFields.Password === 'admin@gmail.com';
+
   const onSubmit = (data) => {
     // console.log(data);
     singIn(data.email, data.Password)
@@ -133,14 +140,14 @@ const Login = () => {
                 Sign in
               </button>
             </form>
-            <div className="flex items-center pt-4 space-x-1">
+            {/* <div className="flex items-center pt-4 space-x-1">
               <div className="flex-1 h-px sm:w-16 bg-gray-700"></div>
               <p className="px-3 text-xl text-gray-700">
                 Login with social accounts
               </p>
               <div className="flex-1 h-px sm:w-16 bg-gray-700"></div>
-            </div>
-            <div className="flex justify-center space-x-4 items-center px-7">
+            </div> */}
+            {/* <div className="flex justify-center space-x-4 items-center px-7">
               <button
                 onClick={handleGoogleLogin}
                 style={{
@@ -171,8 +178,8 @@ const Login = () => {
               >
                 <FaFacebook className="w-7 h-7" color="black" />
               </button>
-            </div>
-            <p className="text-xl text-gray-800">
+            </div> */}
+            {/* <p className="text-xl text-gray-800">
               Don't have an account?
               <Link
                 to="/register"
@@ -180,7 +187,7 @@ const Login = () => {
               >
                 Sign up
               </Link>
-            </p>
+            </p> */}
           </div>
         </div>
       </div>
