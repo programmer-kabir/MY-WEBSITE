@@ -95,13 +95,13 @@ const Navbar = () => {
               <div className="md:block hidden text-md">
                 <ul className="flex gap-4 text-xl font-semibold">
                   <li>
-                    <a href="#">About</a>
+                    <a href="/about">About</a>
                   </li>
                   <li>
-                    <a href="#">Contact</a>
+                    <a href="/contact">Contact</a>
                   </li>
                   <li>
-                    <a href="#">Help</a>
+                    <a href="/contact">Help</a>
                   </li>
                   <li>
                     <a href="#">FAQ</a>
