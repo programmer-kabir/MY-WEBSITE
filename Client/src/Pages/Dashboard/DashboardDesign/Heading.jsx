@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { AiOutlineSearch, AiOutlineSetting } from "react-icons/ai";
 import { MdNotificationsNone } from "react-icons/md";
-import { FaBars, FaUser } from "react-icons/fa";
-import { FaCircleUser } from "react-icons/fa6";
+import { FaBars, FaUser, FaUserCircle } from "react-icons/fa";
 import { BiLogOut, BiSolidDownArrow } from "react-icons/bi";
 import useAuth from "../../../Components/Hooks/useAuth";
 import { Link } from "react-router-dom";
@@ -56,7 +55,7 @@ const Heading = ({ toggleSidebar }) => {
                 </>
               ) : (
                 <>
-                  <FaCircleUser className="w-12 h-12" />
+                  <FaUserCircle className="w-12 h-12" />
                 </>
               )}
               <BiSolidDownArrow
