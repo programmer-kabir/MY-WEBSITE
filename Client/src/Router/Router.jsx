@@ -11,6 +11,7 @@ import TermsAndCondition from "../Pages/Terms/TermsAndCondition";
 import License from "../Pages/License/License";
 import AboutUs from "../Pages/AboutUs/AboutUs";
 import ContactUs from "../Pages/ContactUs/ContactUs";
+import Dashboard from "../Layouts/Dashboard";
 
 const router = createBrowserRouter([
   {
@@ -62,7 +63,10 @@ const router = createBrowserRouter([
         element: <ContactUs />,
       },
     ],
-  },
+  },{
+    path:"/dashboard",
+    element:<Dashboard />
+  }
 ]);
 
 export default router;
