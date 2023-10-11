@@ -247,7 +247,7 @@ const Navbar = () => {
             </ul>
           </div>
           <div className=" md:flex gap-5 items-center  hidden">
-            <Link to='/get-help'>
+            <Link to='/contact'>
                 <button
               className="border bg-[#D8980E] text-xl text-white rounded-md hover:bg-[#ffae00] hover:text-black hover:border-[#D8980E] px-6 py-2"
               style={{ transition: "background 0.4s ease-in-out" }}

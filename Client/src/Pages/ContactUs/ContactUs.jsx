@@ -15,34 +15,10 @@ const ContactUs = () => {
           "Just send us a message, we will get back you as soon as we can."
         }
       />
-      <div className="grid grid-cols-1  items-center md:grid-cols-3 font-markazi">
-        <div className="space-y-2">
-          <img className="w-12 h-12" src={location} alt="" />
-          <h1 className="text-4xl ">Address</h1>
-          <p className="text-2xl text-gray-600">
-            Mangalkata, Sunamganj Sadar <br /> Sunamganj , Sylhet{" "}
-          </p>
-        </div>
-        <div className="space-y-2">
-          <img className="w-12 h-12" src={email} alt="" />
-          <h1 className="text-4xl ">Contact Us</h1>
-          <p className="text-2xl text-gray-600">
-            Admin@gmail.com <br />
-            016445445454
-          </p>
-        </div>
-        <div className="space-y-2">
-          <h1 className="text-4xl ">Join Us Our Community</h1>
-          <div className="flex gap-2 items-center">
-            <img className="w-10 h-10" src={facebook} alt="" />
-
-            <img className="w-11 h-11" src={discord} alt="" />
-          </div>
-        </div>
-      </div>
+      
       {/* From */}
       
-      <div className="grid pt-20 items-center md:grid-cols-2 grid-cols-1 font-markazi">
+      <div className="grid pb-20 items-center md:grid-cols-2 grid-cols-1 font-markazi">
         <div className="w-full 2xl:w-10/12">
           <Lottie  animationData={contactLottie} loop={true} />
         </div>
@@ -69,6 +45,32 @@ const ContactUs = () => {
             <textarea placeholder="Your Message Here" className="w-full text-2xl border border-gray-400 px-4 py-2 rounded-md outline-none" type="text" name="name" id="name" />
           </div>
           <button className='bg-[#0070ff] text-2xl w-full border-2 border-[#004acf] hover:bg-[#004acf] px-6 py-2 text-white font-markazi rounded-md'>Send Message</button>
+        </div>
+      </div>
+      {/* Contact information */}
+      <div className="grid grid-cols-1  items-center md:grid-cols-3 font-markazi">
+        <div className="space-y-2">
+          <img className="w-12 h-12" src={location} alt="" />
+          <h1 className="text-4xl ">Address</h1>
+          <p className="text-2xl text-gray-600">
+            Mangalkata, Sunamganj Sadar <br /> Sunamganj , Sylhet{" "}
+          </p>
+        </div>
+        <div className="space-y-2">
+          <img className="w-12 h-12" src={email} alt="" />
+          <h1 className="text-4xl ">Contact Us</h1>
+          <p className="text-2xl text-gray-600">
+            Admin@gmail.com <br />
+            016445445454
+          </p>
+        </div>
+        <div className="space-y-2">
+          <h1 className="text-4xl ">Join Us Our Community</h1>
+          <div className="flex gap-2 items-center">
+            <img className="w-10 h-10" src={facebook} alt="" />
+
+            <img className="w-11 h-11" src={discord} alt="" />
+          </div>
         </div>
       </div>
     </section>
