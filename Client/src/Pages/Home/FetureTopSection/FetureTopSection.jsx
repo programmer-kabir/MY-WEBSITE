@@ -10,13 +10,13 @@ const FetureTopSection = () => {
 
         <section className='w-10/12 mx-auto'>
 
-            <TitleSection  MainTitle={'Our Feature'} SubTitle={'There are top feature include and clean code optimize,There are top feature include and clean code optimize '}></TitleSection>
+            <TitleSection  MainTitle={'Our Feature'} SubTitle={'Optimize Components, Templates, and customization with documentation to supercharge your business.'}></TitleSection>
 
             <div className='  grid md:grid-cols-4 grid-cols-1 md:gap-10 gap-10 justify-between my-20'>
             <div className='border text-center space-y-3 p-2 shadow-md'>
                 <span className='flex justify-center'><FcTemplate className='text-6xl'></FcTemplate></span>
-                <h2 className='text-4xl font-semibold font-markazi'>HTML template</h2>
-                <p className='2xl:px-16 md:px-5'>We are provide clean code with design in pure html css template.</p>
+                <h2 className='text-4xl font-semibold font-markazi'>HTML & Tailwind</h2>
+                <p className='2xl:px-16 md:px-5'> 100+ Ready for html Tailwind Components.</p>
                 <button className='btn bg-[#0070ff] text-xl hover:bg-[#004acf] px-6 py-2 text-white font-markazi rounded-md'>Get More</button>
             </div>
             <div className='border text-center space-y-2 p-2 shadow-md'>
