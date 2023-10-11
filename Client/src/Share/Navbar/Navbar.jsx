@@ -283,7 +283,7 @@ const Navbar = () => {
                   <Link className="block px-4 py-2 hover:bg-gray-400 rounded hover:text-white">
                     Profile
                   </Link>
-                  <Link className="block px-4 py-2 hover:bg-gray-400 rounded hover:text-white">
+                  <Link to='/dashboard' className="block px-4 py-2 hover:bg-gray-400 rounded hover:text-white">
                     Dashboard
                   </Link>
                   {/* Logout */}
