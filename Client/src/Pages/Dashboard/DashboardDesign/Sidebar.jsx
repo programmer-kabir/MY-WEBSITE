@@ -23,7 +23,7 @@ const Sidebar = () => {
         {/* Header */}
         <div className="border-b  border-white/20 px-5  justify-between  flex md:block items-center">
           <Link to={"/"} className="pt-5 mx-auto text-center">
-          <h2 className="text-3xl md:text-5xl font-markazi ">
+          <h2 className="text-3xl text-white md:text-5xl font-markazi ">
               {" "}
               <span className="text-5xl md:text-7xl text-violet-600 font-bold">X</span> Get
               Fire

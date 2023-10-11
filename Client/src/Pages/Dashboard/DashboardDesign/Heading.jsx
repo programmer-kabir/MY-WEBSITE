@@ -26,7 +26,7 @@ const Heading = ({ toggleSidebar }) => {
         }}
       >
         <button className="md:hidden pl-2 pr-2" onClick={toggleSidebar}>
-          <FaBars />
+          <FaBars color="black"/>
         </button>
         <div className="md:flex hidden gap-2 items-center ">
           <AiOutlineSearch className="w-7 h-7" color="#64748b" />
