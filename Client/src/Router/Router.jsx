@@ -44,10 +44,10 @@ const router = createBrowserRouter([
         path: "/web-site-admin-login",
         element: <Login />,
       },
-      // {
-      //   path: "/register",
-      //   element: <Register />,
-      // },
+      {
+        path: "/register",
+        element: <Register />,
+      },
       {
         path: "/terms_Condition",
         element: <TermsAndCondition />,
