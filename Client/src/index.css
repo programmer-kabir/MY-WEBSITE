@@ -81,3 +81,17 @@
     transform: none;
   }
 }
+
+
+/* admin add components section custom css  */
+
+.formShadow{
+  box-shadow:
+  2.4px 1.2px 2.5px rgba(0, 0, 0, -0.008),
+  5.7px 2.8px 6.4px rgba(0, 0, 0, -0.015),
+  10.8px 5.3px 12.7px rgba(0, 0, 0, -0.021),
+  19.2px 9.4px 23.9px rgba(0, 0, 0, -0.024),
+  35.9px 17.5px 46.8px rgba(0, 0, 0, -0.021),
+  86px 42px 118px rgba(0, 0, 0, 0.06)
+;
+}
