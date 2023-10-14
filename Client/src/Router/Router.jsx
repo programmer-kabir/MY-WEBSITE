@@ -12,6 +12,7 @@ import License from "../Pages/License/License";
 import AboutUs from "../Pages/AboutUs/AboutUs";
 import ContactUs from "../Pages/ContactUs/ContactUs";
 import Dashboard from "../Layouts/Dashboard";
+import AddComponents from "../Pages/Dashboard/add-components/AddComponents";
 
 const router = createBrowserRouter([
   {
@@ -63,10 +64,18 @@ const router = createBrowserRouter([
         element: <ContactUs />,
       },
     ],
-  },{
+  },
+  {
     path:"/dashboard",
-    element:<Dashboard />
-  }
+    element:<Dashboard />,
+      
+     
+ 
+  }, 
+  {
+        path:'add-components',
+        element:<AddComponents></AddComponents>
+      }
 ]);
 
 export default router;

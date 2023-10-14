@@ -1,15 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Link, NavLink, Outlet } from "react-router-dom";
 
-import { FaArrowLeftLong, FaPowerOff } from "react-icons/fa6";
-
-import useAuth from "../../../Components/Hooks/useAuth";
+import {  FaPowerOff } from "react-icons/fa6";
 import Heading from "./Heading";
-import { FaTimes } from "react-icons/fa";
-
+ 
 const Sidebar = () => {
   const isAdmin = false
-  const { user } = useAuth();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const toggleSidebar = () => {
     setIsSidebarOpen((prev) => !prev);
@@ -85,8 +81,8 @@ const Sidebar = () => {
           )}
           {!isAdmin && (
             <>
-              <NavLink
-                to="booked"
+              <NavLink  
+                to="/dashboard"
                 className={({ isActive }) =>
                   `font-semibold transition-all disabled:opacity-50 hover:bg-gray-700 disabled:shadow-none disabled:pointer-events-none text-base py-3 rounded-lg  text-white active:opacity-[0.85] w-full flex items-center gap-4 px-5 capitalize ${
                     isActive ? activeLinkClass : "text-white"
@@ -94,7 +90,18 @@ const Sidebar = () => {
                 }
               >
                 s
-                <span>booked course</span>
+                <span>Dashboard</span>
+              </NavLink>
+              <NavLink
+                to="/add-components"
+                className={({ isActive }) =>
+                  `font-semibold transition-all disabled:opacity-50 hover:bg-gray-700 disabled:shadow-none disabled:pointer-events-none text-base py-3 rounded-lg  text-white active:opacity-[0.85] w-full flex items-center gap-4 px-5 capitalize ${
+                    isActive ? activeLinkClass : "text-white"
+                  }`
+                }
+              >s
+
+                <span>Add Components</span>
               </NavLink>
               <NavLink
                 to="enrol-course"
@@ -104,19 +111,18 @@ const Sidebar = () => {
                   }`
                 }
               >
-                s
-                <span>Enrol Course</span>
+               s
+                <span>Components List</span>
               </NavLink>
               <NavLink
-                
+                to="enrol-course"
                 className={({ isActive }) =>
                   `font-semibold transition-all disabled:opacity-50 hover:bg-gray-700 disabled:shadow-none disabled:pointer-events-none text-base py-3 rounded-lg  text-white active:opacity-[0.85] w-full flex items-center gap-4 px-5 capitalize ${
-                    isActive ? activeLinkClass : ""
+                    isActive ? activeLinkClass : "text-white"
                   }`
                 }
-              >
-               s
-                <span>Profile</span>
+              >s
+                <span>Add Template</span>
               </NavLink>
             </>
           )}
