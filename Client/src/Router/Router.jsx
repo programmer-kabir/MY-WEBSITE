@@ -11,8 +11,12 @@ import TermsAndCondition from "../Pages/Terms/TermsAndCondition";
 import License from "../Pages/License/License";
 import AboutUs from "../Pages/AboutUs/AboutUs";
 import ContactUs from "../Pages/ContactUs/ContactUs";
-import Dashboard from "../Layouts/Dashboard";
+import AddComponents from "../Pages/Dashboard/add-components/AddComponents";
 import PrivateRoute from "./privetRoute";
+import AdminLayout from "../Layouts/AdminLayout";
+import ComponentsList from "../Pages/Dashboard/ComponentsList/ComponentsList";
+import AddTemplate from "../Pages/Dashboard/Add-Tamplate/AddTemplate";
+import AdminDashboard from "../Pages/Dashboard/AdminDashboard/AdminDashboard";
 
 const router = createBrowserRouter([
   {
@@ -66,10 +70,30 @@ const router = createBrowserRouter([
       },
     ],
   },
+
+  // admin template routing 
   {
-    path: "/admin-panel-dashboard",
-    element: <PrivateRoute><Dashboard /></PrivateRoute>
-  },
+    path:"/admin",
+    element:<AdminLayout />,
+    children:[
+      {
+        path:'dashboard',
+        element:<AdminDashboard></AdminDashboard>
+      },
+      {
+        path:'add-components',
+        element:<AddComponents></AddComponents>
+      },
+      {
+        path:'components-list',
+        element:<ComponentsList></ComponentsList>
+      },
+      {
+        path:'AddTemplate',
+        element:<AddTemplate></AddTemplate>
+      }
+    ]
+  }
 ]);
 
 export default router;
