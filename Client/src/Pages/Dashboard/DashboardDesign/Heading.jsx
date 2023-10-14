@@ -16,9 +16,9 @@ const Heading = ({ toggleSidebar }) => {
   };
   console.log(user);
   return (
-    <div className="md:w-[75%] w-[100%]  ml-auto z-50">
+    <div className="2xl:w-[80%]   md:w-[75%] w-[100%]  ml-auto z-50">
       <div
-        className="flex z-10 bg-white fixed w-[100%] md:w-[75%] text-gray-100  items-center px-5 py-3 justify-between"
+        className="flex z-10 bg-white fixed 2xl:w-[80%] w-[100%] md:w-[75%] text-gray-100  items-center px-5 py-3 justify-between"
         style={{
           boxShadow:
             "rgba(0, 0, 0, 0.1) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.1) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset",
