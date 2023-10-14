@@ -16,10 +16,10 @@ const AdminLayout = () => {
     const activeLinkClass =
         "bg-gradient-to-tr from-cyan-600 to-cyan-400 shadow-md shadow-cyan-500/20 hover:shadow-lg hover:shadow-cyan-500/40";
     return (
-        <div className="flex w-full">
+        <div className="flex w-full ">
             
             <div
-                className={`bg-[#0A2C88] text-white md:w-[300px] h-[95%] mt-5 md:mt-0 md:h-full my-auto  z-50 fixed md:block sidebar ${isSidebarOpen ? "sidebar-open mx-2  rounded-lg md:rounded-none md:mx-0 w-[60%]" : ""}`}      >
+                className={`bg-[#0A2C88] text-white md:w-[25%] h-[95%] mt-5 md:mt-0 md:h-full my-auto  z-50 fixed md:block sidebar ${isSidebarOpen ? "sidebar-open mx-2  rounded-lg md:rounded-none md:mx-0 w-[60%]" : ""}`}      >
                 {/* Header */}
                 <div className="border-b  border-white/20 px-5  justify-between  flex md:block items-center">
                     <Link to={"/"} className="pt-5 mx-auto text-center">
@@ -112,9 +112,9 @@ const AdminLayout = () => {
                 </div>
             </div>
             
-            <div className="md:flex-1 border-2 md:w-9/12 mx-auto">
+            <div className="md:flex-1  w-full  mx-auto">
                 <Heading toggleSidebar={toggleSidebar} />
-                <div className=" mt-[100px] overflow-hidden">
+                <div className="md:w-[75%] ml-auto px-5 mt-[100px]">
                      <Outlet></Outlet>
                 </div>
             </div>

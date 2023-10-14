@@ -2,7 +2,7 @@ import React from 'react';
 
 const AddComponents = () => {
     return (
-        <div>
+        <div className='px-5'>
             <h2>This is a add components page </h2>
         </div>
     );
