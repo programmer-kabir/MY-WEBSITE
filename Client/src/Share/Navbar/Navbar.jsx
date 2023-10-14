@@ -256,14 +256,15 @@ const Navbar = () => {
             </button>
             </Link>
           
+            {/* Todo */}
             {/* user */}
-            {user ? (
+            {/* {user ? (
               <div
                 className="flex items-center gap-1"
                 onClick={toggleImageDropdown}
                 ref={dropdownBtnRef}
               >
-                {/* img dropdown */}
+                
                 <img
                   className="w-12 h-12 rounded-full"
                   src={user?.photoURL}
@@ -276,17 +277,10 @@ const Navbar = () => {
                 )}
                 <div
                   ref={dropdownContentRef}
-                  className={`absolute right-32 mt-48 w-48 bg-gray-800 text-xl  rounded shadow-2xl transition-transform duration-200 ${
+                  className={`absolute right-32 mt-6 w-48 bg-gray-800 text-xl  rounded shadow-2xl transition-transform duration-200 ${
                     isOpen ? "scale-100" : "scale-0"
                   }`}
                 >
-                  <Link className="block px-4 py-2 hover:bg-gray-400 rounded hover:text-white">
-                    Profile
-                  </Link>
-                  <Link to='/dashboard' className="block px-4 py-2 hover:bg-gray-400 rounded hover:text-white">
-                    Dashboard
-                  </Link>
-                  {/* Logout */}
                   <button onClick={handleLogOut} className="block w-full text-start px-4 py-2 hover:bg-gray-400 rounded hover:text-white">Logout</button>
                   
                 </div>
@@ -300,7 +294,7 @@ const Navbar = () => {
                   Login
                 </button>
               </Link>
-            )}
+            )} */}
           </div>
           <div className="md:hidden block">
             <button

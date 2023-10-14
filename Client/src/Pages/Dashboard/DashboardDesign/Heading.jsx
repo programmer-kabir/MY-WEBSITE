@@ -45,7 +45,7 @@ const Heading = ({ toggleSidebar }) => {
           <div className="flex items-center gap-2 relative" onClick={toggleBar}>
             {/* Photo */}
             <div className={`flex items-center gap-2 ${open ? "" : ""}`}>
-              {user.photoURL ? (
+              {user?.photoURL ? (
                 <>
                   <img
                     src={user?.photoURL}
