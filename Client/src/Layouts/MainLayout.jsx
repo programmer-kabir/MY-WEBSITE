@@ -11,7 +11,7 @@ const MainLayout = () => {
     useEffect(() => {
         setTimeout(() => {
             setIsLoading(false);
-        }, 2000); // Change the delay time as needed
+        }, ); // Change the delay time as needed
     }, []);
 
     return (

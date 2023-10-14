@@ -1,6 +1,7 @@
 import React from 'react';
 
 const AddComponents = () => {
+    
     return (
         <div className=''>
             <h1 className='text-6xl text-center font-markazi'>Your Beautiful components Add here</h1>
