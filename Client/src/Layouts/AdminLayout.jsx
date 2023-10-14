@@ -22,7 +22,7 @@ const AdminLayout = () => {
             : ""
         }`}
       >
-        {/* Header */}
+      {/* Header */}
         <div className="border-b  border-white/20 px-5  justify-between  flex md:block items-center">
           <Link to={"/"} className="pt-5 mx-auto text-center">
             <h2 className="text-3xl text-white md:text-5xl font-markazi ">
