@@ -10,7 +10,7 @@ const AddComponents = () => {
     const htmlCode = form.htmlCode.value;
     const bootstrap = form.bootstrap.value;
     const react = form.react.value;
-    // console.log(title, category, image, htmlCode, bootstrap, react);
+    console.log(title, category, image, htmlCode, bootstrap, react);
   };
   return (
     <div className="">
