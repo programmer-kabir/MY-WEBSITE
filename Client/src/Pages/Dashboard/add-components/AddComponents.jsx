@@ -1,9 +1,22 @@
 import React from "react";
 
 const AddComponents = () => {
-    return (
-        <div className=''>
-            <h1 className='text-6xl text-center font-markazi'>Your Beautiful components Add here</h1>
+  const formSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const title = form.title.value;
+    const category = form.category.value;
+    const image = form.image.files[0];
+    const htmlCode = form.htmlCode.value;
+    const bootstrap = form.bootstrap.value;
+    const react = form.react.value;
+    console.log(title, category, image, htmlCode, bootstrap, react);
+  };
+  return (
+    <div className="">
+      <h1 className="text-6xl text-center font-markazi">
+        Your Beautiful components Add here
+      </h1>
 
       <div>
         <form
