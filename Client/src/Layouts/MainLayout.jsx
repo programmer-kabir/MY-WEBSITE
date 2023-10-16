@@ -7,11 +7,12 @@ import Loading from "../Share/Loading/Loading";
 const MainLayout = () => {
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false);
-    });
-  }, []);
+    // Simulate a loading delay for demonstration purposes
+    useEffect(() => {
+        setTimeout(() => {
+            setIsLoading(false);
+        }, 2000); // Change the delay time as needed
+    }, []);
 
   return (
     <div className="relative">

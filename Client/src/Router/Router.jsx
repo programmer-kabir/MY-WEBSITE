@@ -17,6 +17,7 @@ import AdminLayout from "../Layouts/AdminLayout";
 import ComponentsList from "../Pages/Dashboard/ComponentsList/ComponentsList";
 import AddTemplate from "../Pages/Dashboard/Add-Tamplate/AddTemplate";
 import AdminDashboard from "../Pages/Dashboard/AdminDashboard/AdminDashboard";
+import Task from "../../Task";
 
 const router = createBrowserRouter([
   {
@@ -68,6 +69,8 @@ const router = createBrowserRouter([
         path: "/contact",
         element: <ContactUs />,
       },
+
+      
     ],
   },
 
@@ -93,7 +96,8 @@ const router = createBrowserRouter([
         element:<AddTemplate></AddTemplate>
       }
     ]
-  }
+  },
+
 ]);
 
 export default router;
