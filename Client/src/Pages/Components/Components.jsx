@@ -20,6 +20,7 @@ const Components = () => {
   const hero = components.filter(nav => nav.category === 'hero')
   const card = components.filter(nav => nav.category === 'card')
 
+
   useEffect(() => {
     // Extract unique category names from components and set them
     const uniqueCategoryNames = Array.from(
@@ -34,17 +35,17 @@ const Components = () => {
   }, [components]);
 
   // Copy
-  const handleCopy = () =>{
+  const handleCopy = () => {
     toast.success('copy success')
   }
   return (
     <div className="w-full">
-      <PagesBanner title={"Components To Easy Access"}  pera={'There are 100+ components to startup in your business and customize to easy in follow our documents'} btn={'Get Products'}></PagesBanner>
+      <PagesBanner title={"Components To Easy Access"} pera={'There are 100+ components to startup in your business and customize to easy in follow our documents'} btn={'Get Products'}></PagesBanner>
       <TitleSection
         MainTitle={"Components"}
         SubTitle={
           "There are all components get you for Free. You can customize any components to easy. High-quality UI elements handcrafted to solve your design and coding challenges for making your web project closer to launch. All components are available in HTML and Tailwind to use React. "
-          
+
         }
       ></TitleSection>
       <div>
@@ -57,7 +58,7 @@ const Components = () => {
                   className={`px-5 py-2 rounded-lg ${activeTab === category.toLowerCase()
                     ? "bg-yellow-500 text-gray-700 pt-2 border-b-2 border-blue-950"
                     : "opacity-50 border border-gray-900 cursor-pointer"
-                  }`}
+                    }`}
                   onClick={() => setActiveTab(category.toLowerCase())}
                 >
                   {category}
@@ -67,20 +68,14 @@ const Components = () => {
           </div>
 
 
-            {/* Here is the set category to list and show website  */}
-          
+          {/* Here is the set category to list and show website  */}
+
           <div>
-            <div
-              className={`tab-content  ${activeTab === "navbar" ? "active" : ""
-                }`}
-            >
+            <div className={`tab-content  ${activeTab === "navbar" ? "active" : ""}`}>
               {activeTab === "navbar" && <ComponentsPreview categoryName={navBar}></ComponentsPreview>}
             </div>
-            <div
-              className={`tab-content  ${activeTab === "hero" ? "active" : ""}`}
-            >
-              {activeTab === "hero" && <ComponentsPreview categoryName={hero}></ComponentsPreview>
-}
+            <div className={`tab-content  ${activeTab === "hero" ? "active" : ""}`}>
+              {activeTab === "hero" && <ComponentsPreview categoryName={hero}></ComponentsPreview>}
             </div>
             <div
               className={`tab-content  ${activeTab === "card" ? "active" : ""}`}
@@ -89,7 +84,7 @@ const Components = () => {
             </div>
           </div>
 
-            {/* Here is the end set category to list and show website  */}
+          {/* Here is the end set category to list and show website  */}
 
         </div>
       </div>

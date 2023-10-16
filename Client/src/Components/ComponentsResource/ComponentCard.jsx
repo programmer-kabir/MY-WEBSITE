@@ -9,7 +9,6 @@ import {
   FaRegEye,
 } from "react-icons/fa";
 import { HiOutlineDevicePhoneMobile } from "react-icons/hi2";
-import { BsEye, BsEyeFill } from "react-icons/bs";
 import toast from "react-hot-toast";
 
 const ComponentCard = ({ item }) => {
@@ -19,12 +18,18 @@ const ComponentCard = ({ item }) => {
   const handleCopy = () => {
     toast.success("copy success");
   };
-  const { title, image, htmlCode,reactCode } = item;
+  const { title, image, htmlCode, react } = item;
   return (
     <div className="p-4  border cardShadow my-5">
-      <div>
-        <img className="w-full h-[300px] object-cover" src={image} alt="" />
+      {/* image section  */}
+      <div className="w-full">
+        <img
+          className="w-full h-full object-cover"
+          src={image}
+          alt=""
+        />
       </div>
+      {/* code click show  */}
       <div className="my-4 flex  justify-between items-center ">
         <h2 className="text-2xl font-semibold">{title}</h2>
         <button
@@ -34,7 +39,6 @@ const ComponentCard = ({ item }) => {
           Get Code
         </button>
       </div>
-
       {showModal && (
         <div className="fixed font-markazi inset-0 z-50 flex items-center justify-center">
           <div className="absolute inset-0 bg-black opacity-40 backdrop-blur-md"></div>
@@ -48,16 +52,15 @@ const ComponentCard = ({ item }) => {
             </span>
 
             <div className="flex justify-between items-center pt-5">
-              <p className="text-4xl">Name</p>
+              <p className="text-4xl">{title}</p>
               {/* Desktop and Mobile Icons */}
               <div className="flex gap-2 bg-gray-300 rounded-md p-1">
                 <div
                   onClick={() => setActiveIcon("desktop")}
-                  className={`p-2 transition-all duration-300 ${
-                    activeIcon === "desktop"
+                  className={`p-2 transition-all duration-300 ${activeIcon === "desktop"
                       ? "bg-white rounded-md"
                       : "bg-gray-300"
-                  }`}
+                    }`}
                 >
                   <FaDesktop
                     size={20}
@@ -66,11 +69,10 @@ const ComponentCard = ({ item }) => {
                 </div>
                 <div
                   onClick={() => setActiveIcon("mobile")}
-                  className={`p-2 transition-all duration-300 ${
-                    activeIcon === "mobile"
+                  className={`p-2 transition-all duration-300 ${activeIcon === "mobile"
                       ? "bg-white rounded-md"
                       : "bg-gray-300"
-                  }`}
+                    }`}
                 >
                   <HiOutlineDevicePhoneMobile
                     size={20}
@@ -83,11 +85,10 @@ const ComponentCard = ({ item }) => {
                 <div className="flex gap-2 bg-gray-300 rounded-md p-1">
                   <div
                     onClick={() => setActiveFormate("preview")}
-                    className={`p-2 cursor-pointer transition-all duration-300 ${
-                      activeFormate === "preview"
+                    className={`p-2 cursor-pointer transition-all duration-300 ${activeFormate === "preview"
                         ? "bg-white rounded-md"
                         : "bg-gray-300"
-                    }`}
+                      }`}
                   >
                     <FaRegEye
                       size={20}
@@ -98,11 +99,10 @@ const ComponentCard = ({ item }) => {
                   </div>
                   <div
                     onClick={() => setActiveFormate("html")}
-                    className={`p-2 transition-all cursor-pointer duration-300 ${
-                      activeFormate === "html"
+                    className={`p-2 transition-all cursor-pointer duration-300 ${activeFormate === "html"
                         ? "bg-white rounded-md"
                         : "bg-gray-300"
-                    }`}
+                      }`}
                   >
                     <AiOutlineHtml5
                       size={20}
@@ -113,11 +113,10 @@ const ComponentCard = ({ item }) => {
                   </div>
                   <div
                     onClick={() => setActiveFormate("react")}
-                    className={`p-2 transition-all cursor-pointer duration-300 ${
-                      activeFormate === "react"
+                    className={`p-2 transition-all cursor-pointer duration-300 ${activeFormate === "react"
                         ? "bg-white rounded-md"
                         : "bg-gray-300"
-                    }`}
+                      }`}
                   >
                     <FaReact
                       size={20}
@@ -134,12 +133,12 @@ const ComponentCard = ({ item }) => {
             </div>
             <div className="h-full">
               {activeFormate === "preview" && <h2>Preview</h2>}
-              {activeFormate === "html" && <div className="bg-gray-500 text-gray-300 mt-5 rounded-md px-5 py-2 h-[85%] overflow-y-auto text-xl">
+              {activeFormate === "html" && <div className="bg-gray-500 text-white mt-5 rounded-md px-5 py-2 h-[85%] overflow-y-auto text-xl">
                 {htmlCode}
-                </div>}
-              {activeFormate === "react" && <div className="bg-gray-500 text-gray-300 mt-5 rounded-md px-5 py-2 h-[85%] overflow-y-auto text-xl">
-                {reactCode}
-                </div>}
+              </div>}
+              {activeFormate === "react" && <div className="bg-gray-500 text-white mt-5 rounded-md px-5 py-2 h-[85%] overflow-y-auto text-xl">
+                {react}
+              </div>}
             </div>
           </div>
         </div>

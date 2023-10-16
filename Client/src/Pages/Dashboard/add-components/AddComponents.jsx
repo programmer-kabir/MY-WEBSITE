@@ -1,16 +1,57 @@
-import React from "react";
+import React, { useRef } from "react";
+import axios from "axios"
+import Swal from "sweetalert2";
+
 
 const AddComponents = () => {
-  const formSubmit = (e) => {
+  const formRef = useRef(null);
+  const formSubmit = async (e) => {
     e.preventDefault();
-    const form = e.target;
-    const title = form.title.value;
-    const category = form.category.value;
-    const image = form.image.files[0];
-    const htmlCode = form.htmlCode.value;
-    const bootstrap = form.bootstrap.value;
-    const react = form.react.value;
-    console.log(title, category, image, htmlCode, bootstrap, react);
+    // Create a FormData object from the form
+    const form = new FormData(e.target);
+    const title = form.get('title');
+    const category = form.get('category');
+    const image = form.get('image');
+    const htmlCode = form.get('htmlCode');
+    const bootstrap = form.get('bootstrap');
+    const react = form.get('react');
+  
+    // Image Upload
+    const formData = new FormData();
+    formData.append('image', image);
+  
+    // Make the image upload request
+    const imgbbResponse = await fetch(`https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_IMGBB_KEY}`, {
+      method: 'POST',
+      body: formData,
+    });
+  
+    if (!imgbbResponse.ok) {
+      throw new Error('Image upload failed');
+    }
+  
+    const imageData = await imgbbResponse.json();
+    const imageUrl = imageData.data.display_url;
+  
+    console.log(imageUrl);
+  
+    axios.post(`${import.meta.env.VITE_LOCAL_SERVER}/components`, {
+      title, category, image: imageUrl, htmlCode, bootstrap, react
+    })
+      .then(data => {
+        console.log(data.data);
+        Swal.fire({
+          position: 'top-center',
+          icon: 'success',
+          title: 'New Item Add Done',
+          showConfirmButton: false,
+          timer: 1500
+        })
+        formRef.current.reset();
+      })
+      .catch(error => {
+        console.log(error);
+      });
   };
   return (
     <div className="">
@@ -19,7 +60,7 @@ const AddComponents = () => {
       </h1>
 
       <div>
-        <form
+        <form ref={formRef}
           onSubmit={formSubmit}
           className="space-y-6 w-[800px] mx-auto border-2 p-10 my-10 bg-[#39e692] formShadow"
         >
