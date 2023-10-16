@@ -17,7 +17,7 @@ import AdminLayout from "../Layouts/AdminLayout";
 import ComponentsList from "../Pages/Dashboard/ComponentsList/ComponentsList";
 import AddTemplate from "../Pages/Dashboard/Add-Tamplate/AddTemplate";
 import AdminDashboard from "../Pages/Dashboard/AdminDashboard/AdminDashboard";
-import Task from "../../Task";
+
 
 const router = createBrowserRouter([
   {
