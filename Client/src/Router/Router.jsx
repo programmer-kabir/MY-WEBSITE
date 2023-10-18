@@ -81,19 +81,19 @@ const router = createBrowserRouter([
     children:[
       {
         path:'dashboard',
-        element:<AdminDashboard></AdminDashboard>
+        element:<AdminDashboard />
       },
       {
         path:'add-components',
-        element:<AddComponents></AddComponents>
+        element:<AddComponents />
       },
       {
         path:'components-list',
-        element:<ComponentsList></ComponentsList>
+        element:<ComponentsList />
       },
       {
         path:'AddTemplate',
-        element:<AddTemplate></AddTemplate>
+        element:<AddTemplate />
       }
     ]
   },

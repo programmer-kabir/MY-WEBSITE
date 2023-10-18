@@ -9,35 +9,28 @@ import ComponentsPreview from "../../Components/Hooks/ComponentsPreview";
 
 const Components = () => {
   const [components] = ComponentsGet();
+  console.log(components);
+
   const [categoryNames, setCategoryNames] = useState([]);
   const [activeTab, setActiveTab] = useState("");
+  
   // Modal
   const [showModal, setShowModal] = useState(false);
-
-  // Here is set data our category in components lists 
-
-  const navBar = components.filter(nav => nav.category === 'NavBar')
-  const hero = components.filter(nav => nav.category === 'hero')
-  const card = components.filter(nav => nav.category === 'card')
-
-
   useEffect(() => {
-    // Extract unique category names from components and set them
     const uniqueCategoryNames = Array.from(
       new Set(components.map((component) => component.category.toLowerCase())) // Convert category to lowercase
     );
     setCategoryNames(uniqueCategoryNames);
-
-    // Set the active tab to the first category
     if (uniqueCategoryNames.length > 0) {
       setActiveTab(uniqueCategoryNames[0]);
     }
   }, [components]);
+  
 
-  // Copy
-  const handleCopy = () => {
-    toast.success('copy success')
-  }
+  const navBar = components.filter(nav => nav.category === 'navbar')
+  const hero = components.filter(nav => nav.category === 'hero')
+  const review = components.filter(nav => nav.category === 'review')
+  const footer = components.filter(nav => nav.category === 'footer')
   return (
     <div className="w-full">
       <PagesBanner title={"Components To Easy Access"} pera={'There are 100+ components to startup in your business and customize to easy in follow our documents'} btn={'Get Products'}></PagesBanner>
@@ -71,20 +64,21 @@ const Components = () => {
           {/* Here is the set category to list and show website  */}
 
           <div>
-            <div className={`tab-content  ${activeTab === "navbar" ? "active" : ""}`}>
-              {activeTab === "navbar" && <ComponentsPreview categoryName={navBar}></ComponentsPreview>}
-            </div>
-            <div className={`tab-content  ${activeTab === "hero" ? "active" : ""}`}>
-              {activeTab === "hero" && <ComponentsPreview categoryName={hero}></ComponentsPreview>}
+          <div
+              className={`tab-content  ${activeTab === "review" ? "active" : ""}`}
+            >
+              {activeTab === "review" && <ComponentsPreview categoryName={review}></ComponentsPreview>}
             </div>
             <div
-              className={`tab-content  ${activeTab === "card" ? "active" : ""}`}
+              className={`tab-content  ${activeTab === "footer" ? "active" : ""}`}
             >
-              {activeTab === "card" && <ComponentsPreview categoryName={card}></ComponentsPreview>}
+              {activeTab === "footer" && <ComponentsPreview categoryName={footer}></ComponentsPreview>}
             </div>
-          </div>
+            {/* <div className={`tab-content ${activeTab}`}>
+            <ComponentsPreview componentsList={currentComponents}></ComponentsPreview>
+          </div> */}
 
-          {/* Here is the end set category to list and show website  */}
+          </div>
 
         </div>
       </div>
