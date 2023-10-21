@@ -136,13 +136,13 @@ const ComponentCard = ({ item }) => {
               {/* {activeFormate === "preview" && <div>{react}</div>} */}
               {activeFormate === "preview" && (
                 <div
-                  className={`bg-gray-500 text-white mt-5 rounded-md px-5 py-2 h-[85%] overflow-y-auto text-base ${
+                  className={` text-white mt-5 rounded-md px-5 py-2 h-[85%] overflow-y-auto text-base ${
                     activeIcon === "desktop" ? "w-full" : "w-[500px] mx-auto"
                   }`}
                   dangerouslySetInnerHTML={{ __html: htmlCode }}
+                  
                 ></div>
               )}
-
               {activeFormate === "html" && (
                 <div className="bg-gray-500 text-white mt-5 rounded-md px-5 py-2 h-[85%] overflow-y-auto text-base">
                   <pre className="whitespace-pre-wrap">
