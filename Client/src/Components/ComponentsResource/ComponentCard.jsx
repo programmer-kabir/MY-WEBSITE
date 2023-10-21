@@ -132,19 +132,21 @@ const ComponentCard = ({ item }) => {
                 </div>
               </div>
             </div>
-            <div className="h-full">
+            <div className="h-full ">
               {/* {activeFormate === "preview" && <div>{react}</div>} */}
               {activeFormate === "preview" && (
                 <div
-                  className={` text-white mt-5 rounded-md px-5 py-2 h-[85%] overflow-y-auto text-base ${
-                    activeIcon === "desktop" ? "w-full" : "w-[500px] mx-auto"
+                  className={` text-white flex justify-center mt-5 rounded-md px-5 py-2 bg-gray h-[85%] overflow-y-auto text-base ${
+                    activeIcon === "desktop" ? "w-full " : "mx-auto"
                   }`}
-                  dangerouslySetInnerHTML={{ __html: htmlCode }}
+                  // dangerouslySetInnerHTML={{ __html: htmlCode }}
                   
-                ></div>
+                >
+                  <img src={image} alt="" />
+                </div>
               )}
               {activeFormate === "html" && (
-                <div className="bg-gray-500 text-white mt-5 rounded-md px-5 py-2 h-[85%] overflow-y-auto text-base">
+                <div className="bg-black text-white mt-5 rounded-md px-5 py-2 h-[85%] overflow-y-auto text-base">
                   <pre className="whitespace-pre-wrap">
                     <div
                       onClick={() => copyToClipboard(htmlCode)}
@@ -157,7 +159,7 @@ const ComponentCard = ({ item }) => {
                 </div>
               )}
               {activeFormate === "react" && (
-                <div className="bg-gray-500 relative  text-white mt-5 rounded-md px-5 py-2 h-[85%] overflow-y-auto text-base">
+                <div className="bg-black relative  text-white mt-5 rounded-md px-5 py-2 h-[85%] overflow-y-auto text-base">
                   <pre className="whitespace-pre-wrap">
                     <div
                       onClick={() => copyToClipboard(react)}
