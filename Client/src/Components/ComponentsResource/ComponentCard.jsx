@@ -27,7 +27,7 @@ const ComponentCard = ({ item }) => {
     toast.success("Copied to clipboard!");
   };
   return (
-    <div className="p-4 rounded-md h-[300px] border cardShadow my-5">
+    <div className="p-4 rounded-md  border cardShadow my-5">
       {/* image section  */}
       <div className="w-full">
         <img className="w-full rounded h-[200px]" src={image} alt="" />
@@ -132,7 +132,7 @@ const ComponentCard = ({ item }) => {
                 </div>
               </div>
             </div>
-            <div className="h-full">
+            <div className="h-full 2xl:h-[700px] bg-black">
               {/* {activeFormate === "preview" && <div>{react}</div>} */}
               {activeFormate === "preview" && (
                 <div

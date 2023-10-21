@@ -8,6 +8,7 @@ import CodeRevel from './CodeRevel/CodeRevel';
 import AboutSection from './AboutSection/AboutSection';
 import Newsletter from './Newsletter/Newsletter';
 import Team from '../../Share/Team/Team';
+import Check from '../../../check';
 
 const Home = () => {
   return (
@@ -21,6 +22,8 @@ const Home = () => {
       <Newsletter></Newsletter>
       <Team></Team>
       <Review></Review>
+
+      <Check></Check>
 
     </div>
   );

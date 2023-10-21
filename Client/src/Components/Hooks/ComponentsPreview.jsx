@@ -4,7 +4,7 @@ import ComponentCard from '../ComponentsResource/ComponentCard';
 const ComponentsPreview = ({ categoryName }) => {
     // console.log(componentsList);
     return (
-        <div className='w-10/12 mx-auto   grid md:grid-cols-3 grid-cols-1 gap-10'>
+        <div className='w-10/12 mx-auto h-auto   grid md:grid-cols-3 grid-cols-1 gap-10'>
             
             {
                 categoryName.map(item => (

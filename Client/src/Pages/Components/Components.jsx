@@ -31,6 +31,7 @@ const Components = () => {
   const hero = components.filter(nav => nav.category === 'hero')
   const review = components.filter(nav => nav.category === 'review')
   const footer = components.filter(nav => nav.category === 'footer')
+  const card = components.filter(nav => nav.category === 'card')
   return (
     <div className="w-full">
       <PagesBanner title={"Components To Easy Access"} pera={'There are 100+ components to startup in your business and customize to easy in follow our documents'} btn={'Get Products'}></PagesBanner>
@@ -68,6 +69,11 @@ const Components = () => {
               className={`tab-content  ${activeTab === "review" ? "active" : ""}`}
             >
               {activeTab === "review" && <ComponentsPreview categoryName={review}></ComponentsPreview>}
+            </div>
+          <div
+              className={`tab-content  ${activeTab === "card" ? "active" : ""}`}
+            >
+              {activeTab === "card" && <ComponentsPreview categoryName={card}></ComponentsPreview>}
             </div>
             <div
               className={`tab-content  ${activeTab === "footer" ? "active" : ""}`}
